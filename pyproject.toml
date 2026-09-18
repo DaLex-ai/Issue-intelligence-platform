@@ -1,0 +1,45 @@
+[project]
+name = "issue-intelligence-platform"
+version = "0.1.0"
+description = "AI-powered platform for software issue triage and resolution assistance"
+readme = "README.md"
+authors = [
+    { name = "DaLex-ai", email = "dalex_official@mail.ru" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "asyncpg>=0.31.0",
+    "fastapi>=0.141.1",
+    "pydantic-settings>=2.15.0",
+    "sqlalchemy>=2.0.54",
+    "uvicorn>=0.53.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.16.7",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["issue_intelligence_platform"]
+branch = true
