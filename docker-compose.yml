@@ -41,12 +41,17 @@ services:
 
     environment:
       DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+      MLFLOW_MODEL_NAME: issue-priority-classifier
+      MLFLOW_MODEL_ALIAS: champion
 
     ports:
       - "8000:8000"
 
     depends_on:
       db:
+        condition: service_healthy
+      mlflow:
         condition: service_healthy
 
     networks:
@@ -73,8 +78,135 @@ services:
         max-size: "10m"
         max-file: "3"
 
+  mlflow-db:
+    image: postgres:17-alpine
+
+    environment:
+      POSTGRES_DB: ${MLFLOW_DB}
+      POSTGRES_USER: ${MLFLOW_DB_USER}
+      POSTGRES_PASSWORD: ${MLFLOW_DB_PASSWORD}
+
+    volumes:
+      - mlflow_postgres_data:/var/lib/postgresql/data
+
+    networks:
+      - backend
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${MLFLOW_DB_USER} -d ${MLFLOW_DB}",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  minio:
+    image: pgsty/silo:RELEASE.2026-09-16T00-00-00Z
+
+    command: server /data --console-address ":9001"
+
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+    volumes:
+      - minio_data:/data
+
+    networks:
+      - backend
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl -f http://localhost:9000/minio/health/live || exit 1",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  minio-init:
+    image: pgsty/mc:RELEASE.2026-09-16T00-00-00Z
+
+    depends_on:
+      minio:
+        condition: service_healthy
+
+    networks:
+      - backend
+
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set local http://minio:9000
+      ${MINIO_ROOT_USER}
+      ${MINIO_ROOT_PASSWORD};
+      mc mb --ignore-existing
+      local/${MLFLOW_ARTIFACT_BUCKET};
+      exit 0;
+      "
+
+  mlflow:
+    build:
+      context: .
+      dockerfile: Dockerfile.mlflow
+
+    environment:
+      AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER}
+      AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
+      AWS_DEFAULT_REGION: us-east-1
+      MLFLOW_S3_ENDPOINT_URL: http://minio:9000
+
+    command: >
+      /bin/sh -c "
+      mlflow db upgrade
+      postgresql+psycopg2://${MLFLOW_DB_USER}:${MLFLOW_DB_PASSWORD}@mlflow-db:5432/${MLFLOW_DB}
+      &&
+      mlflow server
+      --backend-store-uri
+      postgresql+psycopg2://${MLFLOW_DB_USER}:${MLFLOW_DB_PASSWORD}@mlflow-db:5432/${MLFLOW_DB}
+      --artifacts-destination
+      s3://${MLFLOW_ARTIFACT_BUCKET}
+      --host 0.0.0.0
+      --port 5000
+      --allowed-hosts
+      'localhost:5000,127.0.0.1:5000,mlflow:5000'
+      "
+
+    ports:
+      - "5000:5000"
+
+    depends_on:
+      mlflow-db:
+        condition: service_healthy
+      minio-init:
+        condition: service_completed_successfully
+
+    networks:
+      - backend
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:5000/health')",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
 volumes:
   postgres_data:
+  mlflow_postgres_data:
+  minio_data:
 
 networks:
   backend:
