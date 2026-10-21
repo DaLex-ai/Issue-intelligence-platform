@@ -31,9 +31,9 @@ def test_load_resolves_alias_and_loads_exact_version(monkeypatch) -> None:
         lambda _uri: None,
     )
     monkeypatch.setattr(
-        model_service_module.mlflow.pyfunc,
-        "load_model",
-        fake_load_model,
+        model_service_module.mlflow,
+        "pyfunc",
+        SimpleNamespace(load_model=fake_load_model),
     )
 
     service.load()
@@ -41,3 +41,28 @@ def test_load_resolves_alias_and_loads_exact_version(monkeypatch) -> None:
     assert loaded["model_uri"] == "models:/issue-priority-classifier/7"
     assert service.model is fake_model
     assert service.model_version == "7"
+
+
+def test_predict_uses_model_loaded_once_and_input_format() -> None:
+    import pandas as pd
+
+    service = model_service_module.ModelService()
+
+    class FakeModel:
+        def predict(self, data: pd.DataFrame):
+            assert list(data.columns) == ["text"]
+            assert data.iloc[0]["text"] == "Node fails\nStartup error"
+            return ["Urgent"]
+
+    service.model = FakeModel()
+    assert (
+        service.predict(summary="Node fails", description="Startup error") == "Urgent"
+    )
+
+
+def test_predict_requires_initialized_worker_model() -> None:
+    import pytest
+
+    service = model_service_module.ModelService()
+    with pytest.raises(RuntimeError, match="Model is not loaded"):
+        service.predict(summary="Down", description="Down")

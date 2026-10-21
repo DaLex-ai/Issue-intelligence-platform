@@ -1,0 +1,4798 @@
+{
+  "label": "bounded_1_worker",
+  "limit": 20,
+  "workers": 1,
+  "tasks": 240,
+  "duration": 69.07553815841675,
+  "samples": [
+    {
+      "seconds": 0.01,
+      "ready": 0,
+      "unacked": 0,
+      "ack_count": 0,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 66.97,
+        "issue-intelligence-platform-worker-2": 274.5,
+        "issue-intelligence-platform-mlflow-1": 2379.78,
+        "issue-intelligence-platform-minio-1": 148.8,
+        "issue-intelligence-platform-rabbitmq-1": 184.6,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.17,
+        "issue-intelligence-platform-db-1": 25.25,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15,
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.82
+      }
+    },
+    {
+      "seconds": 4.73,
+      "ready": 0,
+      "unacked": 0,
+      "ack_count": 0,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.61,
+        "issue-intelligence-platform-app-1": 66.97,
+        "issue-intelligence-platform-worker-2": 275.4,
+        "issue-intelligence-platform-mlflow-1": 2379.78,
+        "issue-intelligence-platform-minio-1": 148.6,
+        "issue-intelligence-platform-rabbitmq-1": 109.2,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 29.32,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 217.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.14
+      }
+    },
+    {
+      "seconds": 7.83,
+      "ready": 0,
+      "unacked": 0,
+      "ack_count": 0,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.67,
+        "issue-intelligence-platform-app-1": 66.97,
+        "issue-intelligence-platform-worker-2": 275.5,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.6,
+        "issue-intelligence-platform-rabbitmq-1": 109.5,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 29.38,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 217.1,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.14
+      }
+    },
+    {
+      "seconds": 11.63,
+      "ready": 20,
+      "unacked": 2,
+      "ack_count": 18,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.43,
+        "issue-intelligence-platform-app-1": 67.0,
+        "issue-intelligence-platform-worker-2": 275.4,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.6,
+        "issue-intelligence-platform-rabbitmq-1": 155.6,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 29.37,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 15.38,
+      "ready": 20,
+      "unacked": 2,
+      "ack_count": 36,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.44,
+        "issue-intelligence-platform-app-1": 67.0,
+        "issue-intelligence-platform-worker-2": 275.4,
+        "issue-intelligence-platform-mlflow-1": 2379.78,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.2,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 29.38,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 19.09,
+      "ready": 20,
+      "unacked": 2,
+      "ack_count": 56,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.45,
+        "issue-intelligence-platform-app-1": 67.0,
+        "issue-intelligence-platform-worker-2": 275.5,
+        "issue-intelligence-platform-mlflow-1": 2379.78,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.2,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 29.39,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 22.81,
+      "ready": 20,
+      "unacked": 2,
+      "ack_count": 56,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.48,
+        "issue-intelligence-platform-app-1": 67.03,
+        "issue-intelligence-platform-worker-2": 275.6,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.3,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 29.65,
+        "issue-intelligence-platform-mlflow-db-1": 35.32,
+        "rustfs-server": 216.9,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.14
+      }
+    },
+    {
+      "seconds": 26.08,
+      "ready": 20,
+      "unacked": 2,
+      "ack_count": 74,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.47,
+        "issue-intelligence-platform-app-1": 67.03,
+        "issue-intelligence-platform-worker-2": 275.6,
+        "issue-intelligence-platform-mlflow-1": 2379.78,
+        "issue-intelligence-platform-minio-1": 148.6,
+        "issue-intelligence-platform-rabbitmq-1": 109.3,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 29.87,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.14
+      }
+    },
+    {
+      "seconds": 29.81,
+      "ready": 18,
+      "unacked": 2,
+      "ack_count": 94,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.48,
+        "issue-intelligence-platform-app-1": 67.03,
+        "issue-intelligence-platform-worker-2": 275.7,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.6,
+        "issue-intelligence-platform-rabbitmq-1": 172.3,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.17,
+        "issue-intelligence-platform-db-1": 29.41,
+        "issue-intelligence-platform-mlflow-db-1": 35.31,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.14
+      }
+    },
+    {
+      "seconds": 33.5,
+      "ready": 18,
+      "unacked": 2,
+      "ack_count": 114,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.49,
+        "issue-intelligence-platform-app-1": 67.06,
+        "issue-intelligence-platform-worker-2": 276.2,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.3,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 29.43,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.14
+      }
+    },
+    {
+      "seconds": 36.59,
+      "ready": 18,
+      "unacked": 2,
+      "ack_count": 114,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.49,
+        "issue-intelligence-platform-app-1": 67.06,
+        "issue-intelligence-platform-worker-2": 275.7,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.9,
+        "issue-intelligence-platform-rabbitmq-1": 109.4,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 38.67,
+        "issue-intelligence-platform-db-1": 31.36,
+        "issue-intelligence-platform-mlflow-db-1": 35.64,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.14
+      }
+    },
+    {
+      "seconds": 40.32,
+      "ready": 20,
+      "unacked": 2,
+      "ack_count": 132,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.75,
+        "issue-intelligence-platform-app-1": 67.06,
+        "issue-intelligence-platform-worker-2": 275.8,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.4,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.17,
+        "issue-intelligence-platform-db-1": 30.17,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.14
+      }
+    },
+    {
+      "seconds": 44.05,
+      "ready": 20,
+      "unacked": 2,
+      "ack_count": 152,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.68,
+        "issue-intelligence-platform-app-1": 67.09,
+        "issue-intelligence-platform-worker-2": 276.1,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.9,
+        "issue-intelligence-platform-rabbitmq-1": 109.5,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.17,
+        "issue-intelligence-platform-db-1": 29.52,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 217.4,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 47.16,
+      "ready": 20,
+      "unacked": 2,
+      "ack_count": 152,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.5,
+        "issue-intelligence-platform-app-1": 67.09,
+        "issue-intelligence-platform-worker-2": 276.6,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.9,
+        "issue-intelligence-platform-rabbitmq-1": 109.5,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.21,
+        "issue-intelligence-platform-db-1": 30.27,
+        "issue-intelligence-platform-mlflow-db-1": 35.49,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 50.9,
+      "ready": 20,
+      "unacked": 2,
+      "ack_count": 170,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.5,
+        "issue-intelligence-platform-app-1": 67.09,
+        "issue-intelligence-platform-worker-2": 276.0,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.9,
+        "issue-intelligence-platform-rabbitmq-1": 109.5,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 29.66,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 54.64,
+      "ready": 18,
+      "unacked": 2,
+      "ack_count": 190,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.52,
+        "issue-intelligence-platform-app-1": 67.13,
+        "issue-intelligence-platform-worker-2": 276.0,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.9,
+        "issue-intelligence-platform-rabbitmq-1": 154.1,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 29.7,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 57.76,
+      "ready": 18,
+      "unacked": 2,
+      "ack_count": 190,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-99526e54b440": 59.52,
+        "issue-intelligence-platform-app-1": 67.13,
+        "issue-intelligence-platform-worker-2": 276.3,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.9,
+        "issue-intelligence-platform-rabbitmq-1": 109.5,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 29.93,
+        "issue-intelligence-platform-mlflow-db-1": 35.44,
+        "rustfs-server": 216.9,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 61.52,
+      "ready": 20,
+      "unacked": 2,
+      "ack_count": 208,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 67.15,
+        "issue-intelligence-platform-worker-2": 276.3,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.9,
+        "issue-intelligence-platform-rabbitmq-1": 109.5,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.17,
+        "issue-intelligence-platform-db-1": 27.89,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 65.69,
+      "ready": 20,
+      "unacked": 2,
+      "ack_count": 226,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 67.15,
+        "issue-intelligence-platform-worker-2": 276.3,
+        "issue-intelligence-platform-mlflow-1": 2379.78,
+        "issue-intelligence-platform-minio-1": 148.9,
+        "issue-intelligence-platform-rabbitmq-1": 109.5,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.17,
+        "issue-intelligence-platform-db-1": 27.62,
+        "issue-intelligence-platform-mlflow-db-1": 35.46,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.16
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.520570+00:00",
+      "count": 1,
+      "seconds": 3.0501832962036133
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.538378+00:00",
+      "count": 2,
+      "seconds": 3.0675768852233887
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.560286+00:00",
+      "count": 3,
+      "seconds": 3.0895166397094727
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.577531+00:00",
+      "count": 4,
+      "seconds": 3.1064746379852295
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.594307+00:00",
+      "count": 5,
+      "seconds": 3.123595952987671
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.610247+00:00",
+      "count": 6,
+      "seconds": 3.1391496658325195
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.626399+00:00",
+      "count": 7,
+      "seconds": 3.1549248695373535
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.641422+00:00",
+      "count": 8,
+      "seconds": 3.169851541519165
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.658566+00:00",
+      "count": 9,
+      "seconds": 3.1870691776275635
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.674170+00:00",
+      "count": 10,
+      "seconds": 3.202171564102173
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.692532+00:00",
+      "count": 11,
+      "seconds": 3.2207188606262207
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.709539+00:00",
+      "count": 12,
+      "seconds": 3.2377774715423584
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.723350+00:00",
+      "count": 13,
+      "seconds": 3.251633644104004
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.738880+00:00",
+      "count": 14,
+      "seconds": 3.266273260116577
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.754508+00:00",
+      "count": 15,
+      "seconds": 3.28202223777771
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.769756+00:00",
+      "count": 16,
+      "seconds": 3.297008991241455
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.784358+00:00",
+      "count": 17,
+      "seconds": 3.3114259243011475
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.799058+00:00",
+      "count": 18,
+      "seconds": 3.326402425765991
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.814221+00:00",
+      "count": 19,
+      "seconds": 3.341157913208008
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.829381+00:00",
+      "count": 20,
+      "seconds": 3.356189012527466
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.843873+00:00",
+      "count": 21,
+      "seconds": 3.370356798171997
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:11.858777+00:00",
+      "count": 22,
+      "seconds": 3.3854615688323975
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:11.875427+00:00",
+      "count": 1,
+      "seconds": 3.401942014694214
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:11.939784+00:00",
+      "count": 2,
+      "seconds": 3.465421199798584
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:12.054063+00:00",
+      "count": 3,
+      "seconds": 3.5790858268737793
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:12.273308+00:00",
+      "count": 23,
+      "seconds": 3.7969133853912354
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:12.288086+00:00",
+      "count": 24,
+      "seconds": 3.811544895172119
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:12.305247+00:00",
+      "count": 4,
+      "seconds": 3.8288912773132324
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:12.371655+00:00",
+      "count": 5,
+      "seconds": 3.8946244716644287
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:12.484647+00:00",
+      "count": 6,
+      "seconds": 4.00673770904541
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:12.703250+00:00",
+      "count": 25,
+      "seconds": 4.224037170410156
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:12.724996+00:00",
+      "count": 26,
+      "seconds": 4.2454516887664795
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:12.744577+00:00",
+      "count": 7,
+      "seconds": 4.264962911605835
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:12.808951+00:00",
+      "count": 8,
+      "seconds": 4.329344272613525
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:12.923860+00:00",
+      "count": 9,
+      "seconds": 4.443062782287598
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:13.135990+00:00",
+      "count": 27,
+      "seconds": 4.653923034667969
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:13.152098+00:00",
+      "count": 10,
+      "seconds": 4.670135259628296
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:13.215478+00:00",
+      "count": 28,
+      "seconds": 4.732956886291504
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:13.233390+00:00",
+      "count": 11,
+      "seconds": 4.750746965408325
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:13.298060+00:00",
+      "count": 12,
+      "seconds": 4.814999580383301
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:13.415004+00:00",
+      "count": 13,
+      "seconds": 4.9311723709106445
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:13.632584+00:00",
+      "count": 14,
+      "seconds": 5.148448944091797
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:14.063426+00:00",
+      "count": 29,
+      "seconds": 5.579192161560059
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:14.075661+00:00",
+      "count": 30,
+      "seconds": 5.589199542999268
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:14.085781+00:00",
+      "count": 15,
+      "seconds": 5.598771572113037
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:14.146758+00:00",
+      "count": 16,
+      "seconds": 5.659853935241699
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:14.258911+00:00",
+      "count": 31,
+      "seconds": 5.7715904712677
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:14.271332+00:00",
+      "count": 32,
+      "seconds": 5.784244537353516
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:14.283405+00:00",
+      "count": 17,
+      "seconds": 5.795922517776489
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:14.345069+00:00",
+      "count": 18,
+      "seconds": 5.858102321624756
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:14.457913+00:00",
+      "count": 19,
+      "seconds": 5.97169303894043
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:14.670169+00:00",
+      "count": 20,
+      "seconds": 6.182640790939331
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:15.084019+00:00",
+      "count": 33,
+      "seconds": 6.593930959701538
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:15.095542+00:00",
+      "count": 34,
+      "seconds": 6.605227708816528
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:15.105123+00:00",
+      "count": 21,
+      "seconds": 6.614946603775024
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:15.164725+00:00",
+      "count": 22,
+      "seconds": 6.674556255340576
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:15.275787+00:00",
+      "count": 35,
+      "seconds": 6.785524845123291
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:15.287080+00:00",
+      "count": 36,
+      "seconds": 6.796383380889893
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:15.297183+00:00",
+      "count": 23,
+      "seconds": 6.80657434463501
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:15.358074+00:00",
+      "count": 24,
+      "seconds": 6.867445468902588
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:15.468419+00:00",
+      "count": 25,
+      "seconds": 6.977404832839966
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:15.682388+00:00",
+      "count": 26,
+      "seconds": 7.191132068634033
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:16.104221+00:00",
+      "count": 37,
+      "seconds": 7.612196683883667
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:16.115802+00:00",
+      "count": 38,
+      "seconds": 7.623506784439087
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:16.129243+00:00",
+      "count": 27,
+      "seconds": 7.6373677253723145
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:16.189783+00:00",
+      "count": 28,
+      "seconds": 7.697516441345215
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:16.300038+00:00",
+      "count": 39,
+      "seconds": 7.8076746463775635
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:16.311588+00:00",
+      "count": 40,
+      "seconds": 7.818924188613892
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:16.327869+00:00",
+      "count": 29,
+      "seconds": 7.835681438446045
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:16.406353+00:00",
+      "count": 30,
+      "seconds": 7.914349317550659
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:16.520328+00:00",
+      "count": 31,
+      "seconds": 8.027997970581055
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:16.731030+00:00",
+      "count": 32,
+      "seconds": 8.23836874961853
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:17.150409+00:00",
+      "count": 41,
+      "seconds": 8.657461881637573
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:17.161692+00:00",
+      "count": 42,
+      "seconds": 8.668472051620483
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:17.171644+00:00",
+      "count": 33,
+      "seconds": 8.678144693374634
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:17.232655+00:00",
+      "count": 34,
+      "seconds": 8.739564895629883
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:17.344656+00:00",
+      "count": 43,
+      "seconds": 8.852171421051025
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:17.358242+00:00",
+      "count": 44,
+      "seconds": 8.865514516830444
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:17.369898+00:00",
+      "count": 35,
+      "seconds": 8.877478837966919
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:17.431583+00:00",
+      "count": 36,
+      "seconds": 8.938578128814697
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:17.543790+00:00",
+      "count": 37,
+      "seconds": 9.050158977508545
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:17.753702+00:00",
+      "count": 38,
+      "seconds": 9.260507106781006
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:18.174863+00:00",
+      "count": 45,
+      "seconds": 9.682033061981201
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:18.187389+00:00",
+      "count": 46,
+      "seconds": 9.694626569747925
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:18.196999+00:00",
+      "count": 39,
+      "seconds": 9.703827619552612
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:18.256355+00:00",
+      "count": 40,
+      "seconds": 9.763411045074463
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:18.367947+00:00",
+      "count": 41,
+      "seconds": 9.875502109527588
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:18.587486+00:00",
+      "count": 47,
+      "seconds": 10.095454454421997
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:18.600137+00:00",
+      "count": 48,
+      "seconds": 10.107763767242432
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:18.609950+00:00",
+      "count": 42,
+      "seconds": 10.117448329925537
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:18.669037+00:00",
+      "count": 43,
+      "seconds": 10.176560163497925
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:18.779245+00:00",
+      "count": 44,
+      "seconds": 10.287190437316895
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:18.990945+00:00",
+      "count": 49,
+      "seconds": 10.498937368392944
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:19.004517+00:00",
+      "count": 50,
+      "seconds": 10.513158321380615
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:19.017236+00:00",
+      "count": 45,
+      "seconds": 10.525084018707275
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:19.077063+00:00",
+      "count": 46,
+      "seconds": 10.585008144378662
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:19.188333+00:00",
+      "count": 47,
+      "seconds": 10.69652509689331
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:19.400961+00:00",
+      "count": 48,
+      "seconds": 10.909931182861328
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:19.822142+00:00",
+      "count": 51,
+      "seconds": 11.332889080047607
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:19.833600+00:00",
+      "count": 52,
+      "seconds": 11.342986822128296
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:19.842307+00:00",
+      "count": 49,
+      "seconds": 11.352776527404785
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:19.907653+00:00",
+      "count": 50,
+      "seconds": 11.418310403823853
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:20.019406+00:00",
+      "count": 53,
+      "seconds": 11.529321193695068
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:20.030097+00:00",
+      "count": 54,
+      "seconds": 11.53963041305542
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:20.039404+00:00",
+      "count": 51,
+      "seconds": 11.548923015594482
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:20.100315+00:00",
+      "count": 52,
+      "seconds": 11.612752676010132
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:20.213341+00:00",
+      "count": 53,
+      "seconds": 11.724323749542236
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:20.429843+00:00",
+      "count": 54,
+      "seconds": 11.941395998001099
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:20.852381+00:00",
+      "count": 55,
+      "seconds": 12.365254878997803
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:20.874578+00:00",
+      "count": 56,
+      "seconds": 12.387850522994995
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:20.895320+00:00",
+      "count": 55,
+      "seconds": 12.40785264968872
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:20.974083+00:00",
+      "count": 56,
+      "seconds": 12.486252069473267
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:21.095464+00:00",
+      "count": 57,
+      "seconds": 12.609179258346558
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:21.117222+00:00",
+      "count": 58,
+      "seconds": 12.630566358566284
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:21.134653+00:00",
+      "count": 57,
+      "seconds": 12.648333072662354
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:21.203050+00:00",
+      "count": 58,
+      "seconds": 12.716123580932617
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:21.321534+00:00",
+      "count": 59,
+      "seconds": 12.834786176681519
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:21.579725+00:00",
+      "count": 60,
+      "seconds": 13.094034194946289
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:22.004208+00:00",
+      "count": 59,
+      "seconds": 13.523125410079956
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:22.019468+00:00",
+      "count": 60,
+      "seconds": 13.535295963287354
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:22.029843+00:00",
+      "count": 61,
+      "seconds": 13.545122623443604
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:22.093149+00:00",
+      "count": 62,
+      "seconds": 13.610349655151367
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:22.204062+00:00",
+      "count": 61,
+      "seconds": 13.720072031021118
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:22.215939+00:00",
+      "count": 62,
+      "seconds": 13.731653213500977
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:22.225792+00:00",
+      "count": 63,
+      "seconds": 13.741731405258179
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:22.286023+00:00",
+      "count": 64,
+      "seconds": 13.80230975151062
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:22.396413+00:00",
+      "count": 65,
+      "seconds": 13.913081645965576
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:22.606656+00:00",
+      "count": 66,
+      "seconds": 14.123806476593018
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:23.027635+00:00",
+      "count": 63,
+      "seconds": 14.546600580215454
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:23.041979+00:00",
+      "count": 64,
+      "seconds": 14.560934782028198
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:23.053668+00:00",
+      "count": 67,
+      "seconds": 14.572850704193115
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:23.114120+00:00",
+      "count": 68,
+      "seconds": 14.633707523345947
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:23.225731+00:00",
+      "count": 65,
+      "seconds": 14.745662450790405
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:23.237388+00:00",
+      "count": 66,
+      "seconds": 14.75715184211731
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:23.246419+00:00",
+      "count": 69,
+      "seconds": 14.76636004447937
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:23.306985+00:00",
+      "count": 70,
+      "seconds": 14.827128648757935
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:23.418494+00:00",
+      "count": 71,
+      "seconds": 14.939581394195557
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:23.639862+00:00",
+      "count": 72,
+      "seconds": 15.161452293395996
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:24.060511+00:00",
+      "count": 67,
+      "seconds": 15.583975315093994
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:24.071813+00:00",
+      "count": 68,
+      "seconds": 15.594773054122925
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:24.081136+00:00",
+      "count": 73,
+      "seconds": 15.604337692260742
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:24.141068+00:00",
+      "count": 74,
+      "seconds": 15.664704084396362
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:24.252203+00:00",
+      "count": 69,
+      "seconds": 15.776971101760864
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:24.263291+00:00",
+      "count": 70,
+      "seconds": 15.787391662597656
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:24.272792+00:00",
+      "count": 75,
+      "seconds": 15.797129392623901
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:24.334100+00:00",
+      "count": 76,
+      "seconds": 15.85851502418518
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:24.444842+00:00",
+      "count": 77,
+      "seconds": 15.969830751419067
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:24.655475+00:00",
+      "count": 78,
+      "seconds": 16.1815505027771
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:25.073116+00:00",
+      "count": 71,
+      "seconds": 16.608682870864868
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:25.096162+00:00",
+      "count": 72,
+      "seconds": 16.624974012374878
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:25.108297+00:00",
+      "count": 79,
+      "seconds": 16.636531591415405
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:25.168060+00:00",
+      "count": 80,
+      "seconds": 16.69599151611328
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:25.278732+00:00",
+      "count": 73,
+      "seconds": 16.807600259780884
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:25.289031+00:00",
+      "count": 74,
+      "seconds": 16.81781506538391
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:25.298248+00:00",
+      "count": 81,
+      "seconds": 16.826991319656372
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:25.357583+00:00",
+      "count": 82,
+      "seconds": 16.88673496246338
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:25.468416+00:00",
+      "count": 83,
+      "seconds": 16.998952627182007
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:25.679766+00:00",
+      "count": 84,
+      "seconds": 17.210686445236206
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:26.092540+00:00",
+      "count": 75,
+      "seconds": 17.626262426376343
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:26.106512+00:00",
+      "count": 76,
+      "seconds": 17.63980197906494
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:26.121707+00:00",
+      "count": 85,
+      "seconds": 17.6548273563385
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:26.183370+00:00",
+      "count": 86,
+      "seconds": 17.716660022735596
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:26.295101+00:00",
+      "count": 77,
+      "seconds": 17.829492330551147
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:26.313004+00:00",
+      "count": 78,
+      "seconds": 17.847915172576904
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:26.326821+00:00",
+      "count": 87,
+      "seconds": 17.86090922355652
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:26.387930+00:00",
+      "count": 88,
+      "seconds": 17.922803163528442
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:26.500018+00:00",
+      "count": 89,
+      "seconds": 18.036413431167603
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:26.727001+00:00",
+      "count": 90,
+      "seconds": 18.264641761779785
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:27.149982+00:00",
+      "count": 79,
+      "seconds": 18.689379453659058
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:27.162864+00:00",
+      "count": 80,
+      "seconds": 18.702434062957764
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:27.175996+00:00",
+      "count": 91,
+      "seconds": 18.71553945541382
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:27.236313+00:00",
+      "count": 92,
+      "seconds": 18.775511741638184
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:27.347808+00:00",
+      "count": 93,
+      "seconds": 18.888283729553223
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:27.563268+00:00",
+      "count": 81,
+      "seconds": 19.104837656021118
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:27.578017+00:00",
+      "count": 82,
+      "seconds": 19.119077444076538
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:27.590133+00:00",
+      "count": 94,
+      "seconds": 19.131260633468628
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:27.654794+00:00",
+      "count": 95,
+      "seconds": 19.196534633636475
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:27.765627+00:00",
+      "count": 96,
+      "seconds": 19.30742073059082
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:27.976849+00:00",
+      "count": 83,
+      "seconds": 19.520046949386597
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:27.987809+00:00",
+      "count": 84,
+      "seconds": 19.530982494354248
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:27.998435+00:00",
+      "count": 97,
+      "seconds": 19.541712045669556
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:28.060631+00:00",
+      "count": 98,
+      "seconds": 19.60994863510132
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:28.170908+00:00",
+      "count": 99,
+      "seconds": 19.714770555496216
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:28.382108+00:00",
+      "count": 100,
+      "seconds": 19.927939653396606
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:28.801652+00:00",
+      "count": 85,
+      "seconds": 20.34926676750183
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:28.813048+00:00",
+      "count": 86,
+      "seconds": 20.360528230667114
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:28.824068+00:00",
+      "count": 101,
+      "seconds": 20.37191653251648
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:28.886777+00:00",
+      "count": 102,
+      "seconds": 20.434906005859375
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:28.997508+00:00",
+      "count": 87,
+      "seconds": 20.5464026927948
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:29.007600+00:00",
+      "count": 88,
+      "seconds": 20.55638313293457
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:29.017785+00:00",
+      "count": 103,
+      "seconds": 20.566700220108032
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:29.079452+00:00",
+      "count": 104,
+      "seconds": 20.629011869430542
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:29.191083+00:00",
+      "count": 105,
+      "seconds": 20.74105954170227
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:29.401664+00:00",
+      "count": 106,
+      "seconds": 20.95318603515625
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:29.823616+00:00",
+      "count": 89,
+      "seconds": 21.377941370010376
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:29.836209+00:00",
+      "count": 90,
+      "seconds": 21.390393257141113
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:29.848120+00:00",
+      "count": 107,
+      "seconds": 21.40252685546875
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:29.909279+00:00",
+      "count": 108,
+      "seconds": 21.46344494819641
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:30.021543+00:00",
+      "count": 91,
+      "seconds": 21.576549291610718
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:30.034660+00:00",
+      "count": 92,
+      "seconds": 21.589550733566284
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:30.046376+00:00",
+      "count": 109,
+      "seconds": 21.601542949676514
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:30.105867+00:00",
+      "count": 110,
+      "seconds": 21.66154646873474
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:30.217065+00:00",
+      "count": 111,
+      "seconds": 21.773339986801147
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:30.428174+00:00",
+      "count": 112,
+      "seconds": 21.985839366912842
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:30.852391+00:00",
+      "count": 93,
+      "seconds": 22.412570476531982
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:30.869450+00:00",
+      "count": 94,
+      "seconds": 22.428249835968018
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:30.883719+00:00",
+      "count": 113,
+      "seconds": 22.444127798080444
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:30.945088+00:00",
+      "count": 114,
+      "seconds": 22.505775690078735
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:31.057293+00:00",
+      "count": 95,
+      "seconds": 22.61899209022522
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:31.069977+00:00",
+      "count": 96,
+      "seconds": 22.631521463394165
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:31.083179+00:00",
+      "count": 115,
+      "seconds": 22.64484930038452
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:31.144995+00:00",
+      "count": 116,
+      "seconds": 22.707091569900513
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:31.258124+00:00",
+      "count": 117,
+      "seconds": 22.821094274520874
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:31.470842+00:00",
+      "count": 118,
+      "seconds": 23.035057067871094
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:31.900809+00:00",
+      "count": 97,
+      "seconds": 23.46831703186035
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:31.918556+00:00",
+      "count": 98,
+      "seconds": 23.48566699028015
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:31.932381+00:00",
+      "count": 119,
+      "seconds": 23.499168872833252
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:31.993108+00:00",
+      "count": 120,
+      "seconds": 23.560073375701904
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:32.105417+00:00",
+      "count": 99,
+      "seconds": 23.673216819763184
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:32.117548+00:00",
+      "count": 100,
+      "seconds": 23.685633420944214
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:32.129396+00:00",
+      "count": 121,
+      "seconds": 23.69754910469055
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:32.190157+00:00",
+      "count": 122,
+      "seconds": 23.75892949104309
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:32.301568+00:00",
+      "count": 123,
+      "seconds": 23.871215343475342
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:32.512868+00:00",
+      "count": 124,
+      "seconds": 24.083549737930298
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:32.948028+00:00",
+      "count": 101,
+      "seconds": 24.53905415534973
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:32.989067+00:00",
+      "count": 102,
+      "seconds": 24.568742513656616
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:33.015579+00:00",
+      "count": 125,
+      "seconds": 24.59021282196045
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:33.077704+00:00",
+      "count": 126,
+      "seconds": 24.65208649635315
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:33.187925+00:00",
+      "count": 103,
+      "seconds": 24.763810634613037
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:33.200405+00:00",
+      "count": 104,
+      "seconds": 24.776249885559082
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:33.211442+00:00",
+      "count": 127,
+      "seconds": 24.786388635635376
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:33.270815+00:00",
+      "count": 128,
+      "seconds": 24.846304893493652
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:33.381615+00:00",
+      "count": 129,
+      "seconds": 24.958242893218994
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:33.593915+00:00",
+      "count": 130,
+      "seconds": 25.172479152679443
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:34.018039+00:00",
+      "count": 105,
+      "seconds": 25.599817037582397
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:34.035109+00:00",
+      "count": 106,
+      "seconds": 25.616601943969727
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:34.048299+00:00",
+      "count": 131,
+      "seconds": 25.629754543304443
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:34.114335+00:00",
+      "count": 132,
+      "seconds": 25.696346044540405
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:34.226735+00:00",
+      "count": 107,
+      "seconds": 25.80760097503662
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:34.244453+00:00",
+      "count": 108,
+      "seconds": 25.827598571777344
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:34.261167+00:00",
+      "count": 133,
+      "seconds": 25.843984127044678
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:34.322937+00:00",
+      "count": 134,
+      "seconds": 25.905699253082275
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:34.433036+00:00",
+      "count": 135,
+      "seconds": 26.0165696144104
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:34.643450+00:00",
+      "count": 136,
+      "seconds": 26.22773551940918
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:35.064369+00:00",
+      "count": 109,
+      "seconds": 26.652711153030396
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:35.074888+00:00",
+      "count": 110,
+      "seconds": 26.662485361099243
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:35.084608+00:00",
+      "count": 137,
+      "seconds": 26.6720290184021
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:35.146170+00:00",
+      "count": 138,
+      "seconds": 26.734169721603394
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:35.256101+00:00",
+      "count": 111,
+      "seconds": 26.84489393234253
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:35.266512+00:00",
+      "count": 112,
+      "seconds": 26.855237007141113
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:35.275830+00:00",
+      "count": 139,
+      "seconds": 26.8645179271698
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:35.336267+00:00",
+      "count": 140,
+      "seconds": 26.926904916763306
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:35.445820+00:00",
+      "count": 141,
+      "seconds": 27.03645610809326
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:35.655881+00:00",
+      "count": 142,
+      "seconds": 27.247211933135986
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:36.077786+00:00",
+      "count": 113,
+      "seconds": 27.672035694122314
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:36.089141+00:00",
+      "count": 114,
+      "seconds": 27.683560848236084
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:36.098919+00:00",
+      "count": 143,
+      "seconds": 27.69318127632141
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:36.160737+00:00",
+      "count": 144,
+      "seconds": 27.754981756210327
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:36.272010+00:00",
+      "count": 115,
+      "seconds": 27.867411375045776
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:36.282468+00:00",
+      "count": 116,
+      "seconds": 27.87798309326172
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:36.291558+00:00",
+      "count": 145,
+      "seconds": 27.887156009674072
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:36.350485+00:00",
+      "count": 146,
+      "seconds": 27.94670081138611
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:36.459799+00:00",
+      "count": 147,
+      "seconds": 28.057270526885986
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:36.686726+00:00",
+      "count": 148,
+      "seconds": 28.285138607025146
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:37.107540+00:00",
+      "count": 117,
+      "seconds": 28.708755254745483
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:37.118456+00:00",
+      "count": 118,
+      "seconds": 28.71969723701477
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:37.127641+00:00",
+      "count": 149,
+      "seconds": 28.728994369506836
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:37.188179+00:00",
+      "count": 150,
+      "seconds": 28.79129385948181
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:37.302751+00:00",
+      "count": 151,
+      "seconds": 28.90589141845703
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:37.514444+00:00",
+      "count": 119,
+      "seconds": 29.11863899230957
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:37.527755+00:00",
+      "count": 120,
+      "seconds": 29.132206201553345
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:37.537435+00:00",
+      "count": 152,
+      "seconds": 29.14191722869873
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:37.598671+00:00",
+      "count": 153,
+      "seconds": 29.2033052444458
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:37.708755+00:00",
+      "count": 154,
+      "seconds": 29.314889430999756
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:37.919360+00:00",
+      "count": 121,
+      "seconds": 29.527254819869995
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:37.930857+00:00",
+      "count": 122,
+      "seconds": 29.537860870361328
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:37.939601+00:00",
+      "count": 155,
+      "seconds": 29.54646134376526
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:38.000723+00:00",
+      "count": 156,
+      "seconds": 29.608242511749268
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:38.113259+00:00",
+      "count": 157,
+      "seconds": 29.72154664993286
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:38.332848+00:00",
+      "count": 158,
+      "seconds": 29.94291353225708
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:38.753522+00:00",
+      "count": 123,
+      "seconds": 30.36636233329773
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:38.764745+00:00",
+      "count": 124,
+      "seconds": 30.377559661865234
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:38.775774+00:00",
+      "count": 159,
+      "seconds": 30.388885259628296
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:38.892494+00:00",
+      "count": 160,
+      "seconds": 30.450026035308838
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:39.004126+00:00",
+      "count": 125,
+      "seconds": 30.56234312057495
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:39.015622+00:00",
+      "count": 126,
+      "seconds": 30.573723793029785
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:39.025187+00:00",
+      "count": 161,
+      "seconds": 30.583159685134888
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:39.090312+00:00",
+      "count": 162,
+      "seconds": 30.647626161575317
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:39.201658+00:00",
+      "count": 163,
+      "seconds": 30.75732970237732
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:39.414423+00:00",
+      "count": 164,
+      "seconds": 30.96718120574951
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:39.838743+00:00",
+      "count": 127,
+      "seconds": 31.386314153671265
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:39.853480+00:00",
+      "count": 128,
+      "seconds": 31.402242183685303
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:39.874124+00:00",
+      "count": 165,
+      "seconds": 31.42152690887451
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:39.935891+00:00",
+      "count": 166,
+      "seconds": 31.481661319732666
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:40.053686+00:00",
+      "count": 129,
+      "seconds": 31.598625659942627
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:40.069890+00:00",
+      "count": 130,
+      "seconds": 31.614535808563232
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:40.089118+00:00",
+      "count": 167,
+      "seconds": 31.633615970611572
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:40.151375+00:00",
+      "count": 168,
+      "seconds": 31.694886445999146
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:40.268843+00:00",
+      "count": 169,
+      "seconds": 31.81063413619995
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:40.479199+00:00",
+      "count": 170,
+      "seconds": 32.017882347106934
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:40.901718+00:00",
+      "count": 131,
+      "seconds": 32.43639540672302
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:40.916102+00:00",
+      "count": 132,
+      "seconds": 32.45047473907471
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:40.929275+00:00",
+      "count": 171,
+      "seconds": 32.463538646698
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:40.990828+00:00",
+      "count": 172,
+      "seconds": 32.52429533004761
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:41.102082+00:00",
+      "count": 133,
+      "seconds": 32.63514256477356
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:41.113648+00:00",
+      "count": 134,
+      "seconds": 32.646358013153076
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:41.124010+00:00",
+      "count": 173,
+      "seconds": 32.656872510910034
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:41.184890+00:00",
+      "count": 174,
+      "seconds": 32.717124223709106
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:41.294954+00:00",
+      "count": 175,
+      "seconds": 32.8262836933136
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:41.505764+00:00",
+      "count": 176,
+      "seconds": 33.03494668006897
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:41.930832+00:00",
+      "count": 135,
+      "seconds": 33.45618653297424
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:41.942167+00:00",
+      "count": 136,
+      "seconds": 33.467782735824585
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:41.952801+00:00",
+      "count": 177,
+      "seconds": 33.47816872596741
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:42.016416+00:00",
+      "count": 178,
+      "seconds": 33.54129648208618
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:42.131654+00:00",
+      "count": 137,
+      "seconds": 33.65577960014343
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:42.145183+00:00",
+      "count": 138,
+      "seconds": 33.67037296295166
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:42.166812+00:00",
+      "count": 179,
+      "seconds": 33.69024157524109
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:42.227065+00:00",
+      "count": 180,
+      "seconds": 33.750489234924316
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:42.340299+00:00",
+      "count": 181,
+      "seconds": 33.862969160079956
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:42.551838+00:00",
+      "count": 182,
+      "seconds": 34.07290840148926
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:42.973488+00:00",
+      "count": 139,
+      "seconds": 34.49202752113342
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:42.984774+00:00",
+      "count": 140,
+      "seconds": 34.50292444229126
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:42.995095+00:00",
+      "count": 183,
+      "seconds": 34.513274908065796
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:43.055115+00:00",
+      "count": 184,
+      "seconds": 34.57314968109131
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:43.170433+00:00",
+      "count": 141,
+      "seconds": 34.688560247421265
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:43.185522+00:00",
+      "count": 142,
+      "seconds": 34.702903270721436
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:43.198053+00:00",
+      "count": 185,
+      "seconds": 34.71533465385437
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:43.258604+00:00",
+      "count": 186,
+      "seconds": 34.77578830718994
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:43.372060+00:00",
+      "count": 187,
+      "seconds": 34.889952182769775
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:43.588871+00:00",
+      "count": 188,
+      "seconds": 35.106587409973145
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:44.010550+00:00",
+      "count": 143,
+      "seconds": 35.523601770401
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:44.021723+00:00",
+      "count": 144,
+      "seconds": 35.534677028656006
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:44.031459+00:00",
+      "count": 189,
+      "seconds": 35.54498505592346
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:44.091345+00:00",
+      "count": 190,
+      "seconds": 35.604299545288086
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:44.201891+00:00",
+      "count": 145,
+      "seconds": 35.71444892883301
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:44.214365+00:00",
+      "count": 146,
+      "seconds": 35.72694182395935
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:44.224387+00:00",
+      "count": 191,
+      "seconds": 35.73682188987732
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:44.287322+00:00",
+      "count": 192,
+      "seconds": 35.79992341995239
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:44.397953+00:00",
+      "count": 193,
+      "seconds": 35.90992212295532
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:44.617519+00:00",
+      "count": 194,
+      "seconds": 36.129958629608154
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:45.043777+00:00",
+      "count": 147,
+      "seconds": 36.554553270339966
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:45.059323+00:00",
+      "count": 148,
+      "seconds": 36.56828761100769
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:45.076186+00:00",
+      "count": 195,
+      "seconds": 36.58647346496582
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:45.136738+00:00",
+      "count": 196,
+      "seconds": 36.64619541168213
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:45.247626+00:00",
+      "count": 149,
+      "seconds": 36.75676703453064
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:45.259930+00:00",
+      "count": 150,
+      "seconds": 36.769187688827515
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:45.270488+00:00",
+      "count": 197,
+      "seconds": 36.77939534187317
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:45.331129+00:00",
+      "count": 198,
+      "seconds": 36.84019470214844
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:45.443705+00:00",
+      "count": 199,
+      "seconds": 36.9528386592865
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:45.654902+00:00",
+      "count": 200,
+      "seconds": 37.163382053375244
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:46.079399+00:00",
+      "count": 151,
+      "seconds": 37.58813166618347
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:46.120249+00:00",
+      "count": 152,
+      "seconds": 37.62775182723999
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:46.135844+00:00",
+      "count": 201,
+      "seconds": 37.64354634284973
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:46.200823+00:00",
+      "count": 202,
+      "seconds": 37.707969188690186
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:46.313867+00:00",
+      "count": 153,
+      "seconds": 37.82119965553284
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:46.327320+00:00",
+      "count": 154,
+      "seconds": 37.834670305252075
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:46.340338+00:00",
+      "count": 203,
+      "seconds": 37.84912705421448
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:46.403128+00:00",
+      "count": 204,
+      "seconds": 37.91142773628235
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:46.515308+00:00",
+      "count": 205,
+      "seconds": 38.02247071266174
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:46.730714+00:00",
+      "count": 206,
+      "seconds": 38.237252950668335
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:47.157666+00:00",
+      "count": 155,
+      "seconds": 38.664886236190796
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:47.176529+00:00",
+      "count": 156,
+      "seconds": 38.683618783950806
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:47.194671+00:00",
+      "count": 207,
+      "seconds": 38.70183873176575
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:47.266722+00:00",
+      "count": 208,
+      "seconds": 38.77991056442261
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:47.381640+00:00",
+      "count": 157,
+      "seconds": 38.888537645339966
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:47.394064+00:00",
+      "count": 158,
+      "seconds": 38.901625633239746
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:47.415638+00:00",
+      "count": 209,
+      "seconds": 38.92327165603638
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:47.476199+00:00",
+      "count": 210,
+      "seconds": 38.983731746673584
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:47.587006+00:00",
+      "count": 211,
+      "seconds": 39.09391975402832
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:47.799899+00:00",
+      "count": 212,
+      "seconds": 39.30695414543152
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:48.222485+00:00",
+      "count": 159,
+      "seconds": 39.729700326919556
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:48.233740+00:00",
+      "count": 160,
+      "seconds": 39.74047565460205
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:48.244430+00:00",
+      "count": 213,
+      "seconds": 39.7512788772583
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:48.306128+00:00",
+      "count": 214,
+      "seconds": 39.81329870223999
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:48.415989+00:00",
+      "count": 161,
+      "seconds": 39.92390251159668
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:48.426569+00:00",
+      "count": 162,
+      "seconds": 39.933964252471924
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:48.435294+00:00",
+      "count": 215,
+      "seconds": 39.94249105453491
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:48.494517+00:00",
+      "count": 216,
+      "seconds": 40.00234913825989
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:48.604936+00:00",
+      "count": 217,
+      "seconds": 40.11302947998047
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:48.816904+00:00",
+      "count": 218,
+      "seconds": 40.32551050186157
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:49.240281+00:00",
+      "count": 163,
+      "seconds": 40.74929857254028
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:49.258903+00:00",
+      "count": 164,
+      "seconds": 40.77777457237244
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:49.277769+00:00",
+      "count": 219,
+      "seconds": 40.78629207611084
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:49.338068+00:00",
+      "count": 220,
+      "seconds": 40.84669017791748
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:49.449593+00:00",
+      "count": 165,
+      "seconds": 40.958219051361084
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:49.461444+00:00",
+      "count": 166,
+      "seconds": 40.9701931476593
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:49.476537+00:00",
+      "count": 221,
+      "seconds": 40.985074043273926
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:49.536904+00:00",
+      "count": 222,
+      "seconds": 41.04589295387268
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:49.646384+00:00",
+      "count": 223,
+      "seconds": 41.156182527542114
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:49.859238+00:00",
+      "count": 224,
+      "seconds": 41.368807315826416
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:50.279574+00:00",
+      "count": 167,
+      "seconds": 41.790557861328125
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:50.291423+00:00",
+      "count": 168,
+      "seconds": 41.802295207977295
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:50.303619+00:00",
+      "count": 225,
+      "seconds": 41.81407594680786
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:50.363659+00:00",
+      "count": 226,
+      "seconds": 41.87444257736206
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:50.493371+00:00",
+      "count": 227,
+      "seconds": 42.004199743270874
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:50.705261+00:00",
+      "count": 169,
+      "seconds": 42.216774225234985
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:50.717167+00:00",
+      "count": 170,
+      "seconds": 42.22927141189575
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:50.728110+00:00",
+      "count": 228,
+      "seconds": 42.23967933654785
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:50.789796+00:00",
+      "count": 229,
+      "seconds": 42.30181121826172
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:50.904528+00:00",
+      "count": 230,
+      "seconds": 42.416608810424805
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:51.115309+00:00",
+      "count": 171,
+      "seconds": 42.62694478034973
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:51.126237+00:00",
+      "count": 172,
+      "seconds": 42.63871622085571
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:51.136984+00:00",
+      "count": 231,
+      "seconds": 42.64948010444641
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:51.197041+00:00",
+      "count": 232,
+      "seconds": 42.709973096847534
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:51.308194+00:00",
+      "count": 233,
+      "seconds": 42.82147574424744
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:51.519701+00:00",
+      "count": 234,
+      "seconds": 43.0335795879364
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:51.940785+00:00",
+      "count": 173,
+      "seconds": 43.45598912239075
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:51.951125+00:00",
+      "count": 174,
+      "seconds": 43.46618032455444
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:51.960354+00:00",
+      "count": 235,
+      "seconds": 43.47536373138428
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:52.027172+00:00",
+      "count": 236,
+      "seconds": 43.57136011123657
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:52.138253+00:00",
+      "count": 175,
+      "seconds": 43.65414834022522
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:52.149697+00:00",
+      "count": 176,
+      "seconds": 43.66544580459595
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:52.163060+00:00",
+      "count": 237,
+      "seconds": 43.679189920425415
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:52.225890+00:00",
+      "count": 238,
+      "seconds": 43.74353790283203
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:52.338497+00:00",
+      "count": 239,
+      "seconds": 43.855021715164185
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:52.551238+00:00",
+      "count": 240,
+      "seconds": 44.06842565536499
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:52.980770+00:00",
+      "count": 177,
+      "seconds": 44.49924683570862
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:52.997325+00:00",
+      "count": 178,
+      "seconds": 44.51758122444153
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:53.013948+00:00",
+      "count": 241,
+      "seconds": 44.53390121459961
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:53.079477+00:00",
+      "count": 242,
+      "seconds": 44.59959125518799
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:53.192744+00:00",
+      "count": 179,
+      "seconds": 44.71226191520691
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:53.208017+00:00",
+      "count": 180,
+      "seconds": 44.72806644439697
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:53.223235+00:00",
+      "count": 243,
+      "seconds": 44.742905378341675
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:53.284276+00:00",
+      "count": 244,
+      "seconds": 44.804316997528076
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:53.397966+00:00",
+      "count": 245,
+      "seconds": 44.91890501976013
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:53.610239+00:00",
+      "count": 246,
+      "seconds": 45.13190031051636
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:54.030641+00:00",
+      "count": 181,
+      "seconds": 45.554157972335815
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:54.042182+00:00",
+      "count": 182,
+      "seconds": 45.565407514572144
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:54.052063+00:00",
+      "count": 247,
+      "seconds": 45.57552742958069
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:54.115531+00:00",
+      "count": 248,
+      "seconds": 45.63943529129028
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:54.227277+00:00",
+      "count": 183,
+      "seconds": 45.75161862373352
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:54.237966+00:00",
+      "count": 184,
+      "seconds": 45.76236605644226
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:54.247544+00:00",
+      "count": 249,
+      "seconds": 45.77195501327515
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:54.306809+00:00",
+      "count": 250,
+      "seconds": 45.83153295516968
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:54.416709+00:00",
+      "count": 251,
+      "seconds": 45.94195485115051
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:54.628065+00:00",
+      "count": 252,
+      "seconds": 46.15415978431702
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:55.046736+00:00",
+      "count": 185,
+      "seconds": 46.574846506118774
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:55.057136+00:00",
+      "count": 186,
+      "seconds": 46.58512997627258
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:55.066760+00:00",
+      "count": 253,
+      "seconds": 46.594489336013794
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:55.128251+00:00",
+      "count": 254,
+      "seconds": 46.65719032287598
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:55.239312+00:00",
+      "count": 187,
+      "seconds": 46.768840312957764
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:55.252073+00:00",
+      "count": 188,
+      "seconds": 46.781245470047
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:55.263160+00:00",
+      "count": 255,
+      "seconds": 46.79226517677307
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:55.323581+00:00",
+      "count": 256,
+      "seconds": 46.85304117202759
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:55.434293+00:00",
+      "count": 257,
+      "seconds": 46.964864015579224
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:55.647910+00:00",
+      "count": 258,
+      "seconds": 47.17999529838562
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:56.070182+00:00",
+      "count": 189,
+      "seconds": 47.604243993759155
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:56.083514+00:00",
+      "count": 190,
+      "seconds": 47.61731147766113
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:56.095243+00:00",
+      "count": 259,
+      "seconds": 47.62831950187683
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:56.156385+00:00",
+      "count": 260,
+      "seconds": 47.690019845962524
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:56.268478+00:00",
+      "count": 191,
+      "seconds": 47.80286478996277
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:56.279935+00:00",
+      "count": 192,
+      "seconds": 47.814069747924805
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:56.290267+00:00",
+      "count": 261,
+      "seconds": 47.82437777519226
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:56.350638+00:00",
+      "count": 262,
+      "seconds": 47.88531970977783
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:56.460912+00:00",
+      "count": 263,
+      "seconds": 47.996455907821655
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:56.672812+00:00",
+      "count": 264,
+      "seconds": 48.20886301994324
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:57.083220+00:00",
+      "count": 193,
+      "seconds": 48.622135400772095
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:57.095734+00:00",
+      "count": 194,
+      "seconds": 48.63397789001465
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:57.105446+00:00",
+      "count": 265,
+      "seconds": 48.64381217956543
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:57.165017+00:00",
+      "count": 266,
+      "seconds": 48.70447063446045
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:57.276169+00:00",
+      "count": 267,
+      "seconds": 48.81569838523865
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:57.487864+00:00",
+      "count": 195,
+      "seconds": 49.029000759124756
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:57.499070+00:00",
+      "count": 196,
+      "seconds": 49.0398325920105
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:57.509293+00:00",
+      "count": 268,
+      "seconds": 49.05006814002991
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:57.568708+00:00",
+      "count": 269,
+      "seconds": 49.110212326049805
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:57.681463+00:00",
+      "count": 270,
+      "seconds": 49.22310543060303
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:57.891989+00:00",
+      "count": 197,
+      "seconds": 49.435176372528076
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:57.903390+00:00",
+      "count": 198,
+      "seconds": 49.44648575782776
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:57.913800+00:00",
+      "count": 271,
+      "seconds": 49.45681691169739
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:57.973646+00:00",
+      "count": 272,
+      "seconds": 49.5172815322876
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:58.084002+00:00",
+      "count": 273,
+      "seconds": 49.62830376625061
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:58.296146+00:00",
+      "count": 274,
+      "seconds": 49.8429114818573
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:58.719421+00:00",
+      "count": 199,
+      "seconds": 50.26655125617981
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:58.731839+00:00",
+      "count": 200,
+      "seconds": 50.27983045578003
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:58.744293+00:00",
+      "count": 275,
+      "seconds": 50.292197942733765
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:58.805159+00:00",
+      "count": 276,
+      "seconds": 50.35290455818176
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:58.916253+00:00",
+      "count": 201,
+      "seconds": 50.464948654174805
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:58.930027+00:00",
+      "count": 202,
+      "seconds": 50.47890877723694
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:58.947232+00:00",
+      "count": 277,
+      "seconds": 50.496644496917725
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:59.012708+00:00",
+      "count": 278,
+      "seconds": 50.56248331069946
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:59.122994+00:00",
+      "count": 279,
+      "seconds": 50.67320370674133
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:59.334213+00:00",
+      "count": 280,
+      "seconds": 50.88533401489258
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:59.755686+00:00",
+      "count": 203,
+      "seconds": 51.30965733528137
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:59.770332+00:00",
+      "count": 204,
+      "seconds": 51.324389696121216
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:59.784849+00:00",
+      "count": 281,
+      "seconds": 51.339637756347656
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:59.847217+00:00",
+      "count": 282,
+      "seconds": 51.40172028541565
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:59.961201+00:00",
+      "count": 205,
+      "seconds": 51.517314434051514
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:45:59.976959+00:00",
+      "count": 206,
+      "seconds": 51.53311347961426
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:45:59.992435+00:00",
+      "count": 283,
+      "seconds": 51.54888582229614
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:00.074591+00:00",
+      "count": 284,
+      "seconds": 51.6321120262146
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:00.186583+00:00",
+      "count": 285,
+      "seconds": 51.74314475059509
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:00.406490+00:00",
+      "count": 286,
+      "seconds": 51.96429204940796
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:00.831793+00:00",
+      "count": 207,
+      "seconds": 52.393970251083374
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:00.850581+00:00",
+      "count": 208,
+      "seconds": 52.41120195388794
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:00.875576+00:00",
+      "count": 287,
+      "seconds": 52.43683838844299
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:00.937608+00:00",
+      "count": 288,
+      "seconds": 52.49856162071228
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:01.050926+00:00",
+      "count": 209,
+      "seconds": 52.613077878952026
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:01.063908+00:00",
+      "count": 210,
+      "seconds": 52.626784801483154
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:01.076757+00:00",
+      "count": 289,
+      "seconds": 52.63876247406006
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:01.136167+00:00",
+      "count": 290,
+      "seconds": 52.69892716407776
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:01.250095+00:00",
+      "count": 291,
+      "seconds": 52.813135862350464
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:01.461374+00:00",
+      "count": 292,
+      "seconds": 53.026113748550415
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:01.882557+00:00",
+      "count": 211,
+      "seconds": 53.449830532073975
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:01.893730+00:00",
+      "count": 212,
+      "seconds": 53.46119713783264
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:01.902825+00:00",
+      "count": 293,
+      "seconds": 53.46988582611084
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:01.961574+00:00",
+      "count": 294,
+      "seconds": 53.52928042411804
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:02.072322+00:00",
+      "count": 213,
+      "seconds": 53.641201972961426
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:02.086765+00:00",
+      "count": 214,
+      "seconds": 53.65541362762451
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:02.098576+00:00",
+      "count": 295,
+      "seconds": 53.66696786880493
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:02.164689+00:00",
+      "count": 296,
+      "seconds": 53.73388671875
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:02.275649+00:00",
+      "count": 297,
+      "seconds": 53.845696687698364
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:02.524445+00:00",
+      "count": 298,
+      "seconds": 54.09812378883362
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:02.944806+00:00",
+      "count": 215,
+      "seconds": 54.51902651786804
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:02.955704+00:00",
+      "count": 216,
+      "seconds": 54.52999949455261
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:02.964879+00:00",
+      "count": 299,
+      "seconds": 54.539164543151855
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:03.025311+00:00",
+      "count": 300,
+      "seconds": 54.60007977485657
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:03.144131+00:00",
+      "count": 217,
+      "seconds": 54.72257399559021
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:03.176139+00:00",
+      "count": 218,
+      "seconds": 54.776434898376465
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:03.220853+00:00",
+      "count": 301,
+      "seconds": 54.7980682849884
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:03.283148+00:00",
+      "count": 302,
+      "seconds": 54.85948657989502
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:03.393257+00:00",
+      "count": 303,
+      "seconds": 54.97038435935974
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:03.613120+00:00",
+      "count": 304,
+      "seconds": 55.192665338516235
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:04.034878+00:00",
+      "count": 219,
+      "seconds": 55.61622977256775
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:04.045816+00:00",
+      "count": 220,
+      "seconds": 55.62715172767639
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:04.055015+00:00",
+      "count": 305,
+      "seconds": 55.63630032539368
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:04.116249+00:00",
+      "count": 306,
+      "seconds": 55.69961333274841
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:04.226756+00:00",
+      "count": 221,
+      "seconds": 55.80946969985962
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:04.237547+00:00",
+      "count": 222,
+      "seconds": 55.8201584815979
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:04.246775+00:00",
+      "count": 307,
+      "seconds": 55.8295111656189
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:04.306748+00:00",
+      "count": 308,
+      "seconds": 55.89042925834656
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:04.417522+00:00",
+      "count": 309,
+      "seconds": 56.001869201660156
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:04.634898+00:00",
+      "count": 310,
+      "seconds": 56.22040915489197
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:05.055853+00:00",
+      "count": 223,
+      "seconds": 56.643099308013916
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:05.067751+00:00",
+      "count": 224,
+      "seconds": 56.65600776672363
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:05.078272+00:00",
+      "count": 311,
+      "seconds": 56.66678309440613
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:05.139114+00:00",
+      "count": 312,
+      "seconds": 56.72800397872925
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:05.250582+00:00",
+      "count": 225,
+      "seconds": 56.84020233154297
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:05.261837+00:00",
+      "count": 226,
+      "seconds": 56.851744413375854
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:05.272051+00:00",
+      "count": 313,
+      "seconds": 56.86164093017578
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:05.335988+00:00",
+      "count": 314,
+      "seconds": 56.92715787887573
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:05.446698+00:00",
+      "count": 315,
+      "seconds": 57.03782296180725
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:05.666807+00:00",
+      "count": 316,
+      "seconds": 57.258509159088135
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:06.090024+00:00",
+      "count": 227,
+      "seconds": 57.686150789260864
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:06.107340+00:00",
+      "count": 228,
+      "seconds": 57.70320749282837
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:06.120182+00:00",
+      "count": 317,
+      "seconds": 57.71671485900879
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:06.183100+00:00",
+      "count": 318,
+      "seconds": 57.78044629096985
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:06.302788+00:00",
+      "count": 229,
+      "seconds": 57.90041136741638
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:06.323185+00:00",
+      "count": 230,
+      "seconds": 57.920737504959106
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:06.339363+00:00",
+      "count": 319,
+      "seconds": 57.936500787734985
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:06.400988+00:00",
+      "count": 320,
+      "seconds": 57.99874448776245
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:06.514944+00:00",
+      "count": 321,
+      "seconds": 58.11422562599182
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:06.724842+00:00",
+      "count": 322,
+      "seconds": 58.32373237609863
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:07.145032+00:00",
+      "count": 231,
+      "seconds": 58.748366594314575
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:07.157038+00:00",
+      "count": 232,
+      "seconds": 58.76026773452759
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:07.166446+00:00",
+      "count": 323,
+      "seconds": 58.7692346572876
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:07.227796+00:00",
+      "count": 324,
+      "seconds": 58.83129262924194
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:07.354951+00:00",
+      "count": 233,
+      "seconds": 58.959015130996704
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:07.365846+00:00",
+      "count": 234,
+      "seconds": 58.96983075141907
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:07.376271+00:00",
+      "count": 325,
+      "seconds": 58.98047137260437
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:07.434590+00:00",
+      "count": 326,
+      "seconds": 59.039438009262085
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:07.545448+00:00",
+      "count": 327,
+      "seconds": 59.151790142059326
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:07.754977+00:00",
+      "count": 328,
+      "seconds": 59.362072706222534
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:08.165378+00:00",
+      "count": 235,
+      "seconds": 59.77544927597046
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:08.176254+00:00",
+      "count": 236,
+      "seconds": 59.785876512527466
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:08.185271+00:00",
+      "count": 329,
+      "seconds": 59.79553508758545
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:08.244297+00:00",
+      "count": 330,
+      "seconds": 59.85477948188782
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:08.360995+00:00",
+      "count": 331,
+      "seconds": 59.985600233078
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:08.572719+00:00",
+      "count": 237,
+      "seconds": 60.18601369857788
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:08.583107+00:00",
+      "count": 238,
+      "seconds": 60.19594359397888
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:08.592999+00:00",
+      "count": 332,
+      "seconds": 60.20573925971985
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:08.653555+00:00",
+      "count": 333,
+      "seconds": 60.26695156097412
+    },
+    {
+      "event": "publish_rejected",
+      "timestamp": "2026-10-20T19:46:08.763423+00:00",
+      "count": 334,
+      "seconds": 60.37801504135132
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:09.031587+00:00",
+      "count": 239,
+      "seconds": 60.58882284164429
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:46:09.042499+00:00",
+      "count": 240,
+      "seconds": 60.59982252120972
+    }
+  ],
+  "latencies_seconds": [
+    [
+      0.5301331730006495,
+      0.575834
+    ],
+    [
+      0.5070430040004794,
+      0.573479
+    ],
+    [
+      0.505329332000656,
+      1.054356
+    ],
+    [
+      0.5089408460007689,
+      2.029722
+    ],
+    [
+      0.5087786520007285,
+      2.039939
+    ],
+    [
+      0.5053048449999551,
+      2.526797
+    ],
+    [
+      0.5035153329999957,
+      3.025457
+    ],
+    [
+      0.5056284749998667,
+      3.515553
+    ],
+    [
+      0.5068414099996517,
+      3.991717
+    ],
+    [
+      0.5043943509999735,
+      4.498035
+    ],
+    [
+      0.5041108860004897,
+      4.995602
+    ],
+    [
+      0.5066000950000671,
+      5.475347
+    ],
+    [
+      0.5075299290001567,
+      5.490081
+    ],
+    [
+      0.5045518150000134,
+      5.987858
+    ],
+    [
+      0.5046889779996491,
+      6.078907
+    ],
+    [
+      0.5066713200003505,
+      5.758048
+    ],
+    [
+      0.5125185309998415,
+      6.169194
+    ],
+    [
+      0.503889500000696,
+      6.197816
+    ],
+    [
+      0.5082064379994335,
+      5.679862
+    ],
+    [
+      0.5092345680004655,
+      5.863913
+    ],
+    [
+      0.5098721299991666,
+      6.197101
+    ],
+    [
+      0.508667845000673,
+      5.904391
+    ],
+    [
+      0.5330537429999822,
+      6.26395
+    ],
+    [
+      0.5350365949998377,
+      5.447601
+    ],
+    [
+      0.5071023860000423,
+      5.790561
+    ],
+    [
+      0.5051973529998577,
+      6.306999
+    ],
+    [
+      0.5054216739999902,
+      5.469562
+    ],
+    [
+      0.5068130760000713,
+      1.052122
+    ],
+    [
+      0.5077398190005624,
+      1.536206
+    ],
+    [
+      0.5056445009995514,
+      2.534546
+    ],
+    [
+      0.5070408470000984,
+      3.499968
+    ],
+    [
+      0.5045615609997185,
+      4.006311
+    ],
+    [
+      0.5106242369993197,
+      5.384135
+    ],
+    [
+      0.512752601000102,
+      5.723683
+    ],
+    [
+      0.5044323419997454,
+      5.982345
+    ],
+    [
+      0.5037988569993104,
+      6.305268
+    ],
+    [
+      0.5036881699998048,
+      5.99573
+    ],
+    [
+      0.5066098620000048,
+      5.594023
+    ],
+    [
+      0.5052101290002611,
+      6.10647
+    ],
+    [
+      0.5046333239997693,
+      6.223381
+    ],
+    [
+      0.5070553340001425,
+      5.407438
+    ],
+    [
+      0.5039829620000091,
+      5.916296
+    ],
+    [
+      0.505339790999642,
+      6.243581
+    ],
+    [
+      0.5090550240001903,
+      5.417693
+    ],
+    [
+      0.5068090830000074,
+      5.694523
+    ],
+    [
+      0.518655547999515,
+      5.928084
+    ],
+    [
+      0.504330034999839,
+      6.216326
+    ],
+    [
+      0.5041130809995593,
+      5.838482
+    ],
+    [
+      0.5076416419997258,
+      5.655273
+    ],
+    [
+      0.5058782129999599,
+      1.543761
+    ],
+    [
+      0.5031828759993004,
+      3.01009
+    ],
+    [
+      0.5073361309996471,
+      4.483549
+    ],
+    [
+      0.5070943539994914,
+      4.982677
+    ],
+    [
+      0.5068158799995217,
+      5.574762
+    ],
+    [
+      0.507826510999621,
+      5.664876
+    ],
+    [
+      0.5057158649997291,
+      5.35141
+    ],
+    [
+      0.503883235000103,
+      5.975977
+    ],
+    [
+      0.5097042369998235,
+      5.798664
+    ],
+    [
+      0.5066859050002677,
+      5.488265
+    ],
+    [
+      0.5071453670007031,
+      5.716064
+    ],
+    [
+      0.5060670859993479,
+      5.730615
+    ],
+    [
+      0.5039111750002121,
+      5.86507
+    ],
+    [
+      0.5061355859998002,
+      5.681163
+    ],
+    [
+      0.5053620199996658,
+      6.197311
+    ],
+    [
+      0.5127176320002036,
+      5.374033
+    ],
+    [
+      0.5037985609997122,
+      5.904024
+    ],
+    [
+      0.5063624569993408,
+      5.418973
+    ],
+    [
+      0.5074210659995515,
+      6.238139
+    ],
+    [
+      0.504116327999327,
+      5.744979
+    ],
+    [
+      0.5048330560002796,
+      6.258538
+    ],
+    [
+      0.5073547080000935,
+      5.453305
+    ],
+    [
+      0.5082883710001624,
+      5.963047
+    ],
+    [
+      0.5115282560000196,
+      5.778449
+    ],
+    [
+      0.504425516000083,
+      6.282663
+    ],
+    [
+      0.5088266559996555,
+      5.447997
+    ],
+    [
+      0.5071245839999392,
+      5.559872
+    ],
+    [
+      0.5129390740003146,
+      5.960698
+    ],
+    [
+      0.5077927720003572,
+      5.668956
+    ],
+    [
+      0.5052735540002686,
+      6.18426
+    ],
+    [
+      0.508778952999819,
+      5.370694
+    ],
+    [
+      0.5039548989998366,
+      5.699131
+    ],
+    [
+      0.5043260630000077,
+      6.209216
+    ],
+    [
+      0.5062980100001369,
+      5.392908
+    ],
+    [
+      0.5076949470003456,
+      5.715083
+    ],
+    [
+      0.5040365570002905,
+      6.223013
+    ],
+    [
+      0.5075624270002663,
+      5.404239
+    ],
+    [
+      0.5035351989999981,
+      5.905549
+    ],
+    [
+      0.5055775900000299,
+      5.719441
+    ],
+    [
+      0.5039425539998774,
+      6.227467
+    ],
+    [
+      0.5040418839998893,
+      5.899582
+    ],
+    [
+      0.5056406900002912,
+      5.714566
+    ],
+    [
+      0.5037331619996621,
+      6.223663
+    ],
+    [
+      0.5047360919998027,
+      5.923086
+    ],
+    [
+      0.5065376590000596,
+      5.733012
+    ],
+    [
+      0.504243014000167,
+      5.329377
+    ],
+    [
+      0.5050303620000705,
+      5.354866
+    ],
+    [
+      0.5051142250003977,
+      5.723437
+    ],
+    [
+      0.5070608189998893,
+      5.927096
+    ],
+    [
+      0.5087614229996689,
+      6.067633
+    ],
+    [
+      0.5072140470001614,
+      5.883646
+    ],
+    [
+      0.5066230020001967,
+      5.619705
+    ],
+    [
+      0.5089265800006615,
+      5.401063
+    ],
+    [
+      0.5058756709995578,
+      5.412971
+    ],
+    [
+      0.5084031320002396,
+      5.43213
+    ],
+    [
+      0.5064211469998554,
+      5.443941
+    ],
+    [
+      0.5081617159994494,
+      5.439833
+    ],
+    [
+      0.5066999739992752,
+      5.658898
+    ],
+    [
+      0.5086017280000306,
+      5.871699
+    ],
+    [
+      0.503910014000212,
+      6.202417
+    ],
+    [
+      0.5139466709997578,
+      5.434365
+    ],
+    [
+      0.5083753599992633,
+      5.969049
+    ],
+    [
+      0.5123310580001998,
+      5.739462
+    ],
+    [
+      0.5040694339995753,
+      6.168234
+    ],
+    [
+      0.5045273189998625,
+      5.900723
+    ],
+    [
+      0.5075696899994,
+      5.395105
+    ],
+    [
+      0.5086810000002515,
+      5.368599
+    ],
+    [
+      0.5097178910000366,
+      5.759996
+    ],
+    [
+      0.5092872409995834,
+      5.787659
+    ],
+    [
+      0.5040836079997462,
+      6.250485
+    ],
+    [
+      0.5082111789997725,
+      5.388537
+    ],
+    [
+      0.5086148540003705,
+      5.419034
+    ],
+    [
+      0.5065033330001825,
+      5.705068
+    ],
+    [
+      0.5053148890001466,
+      5.619137
+    ],
+    [
+      0.5049563060001674,
+      5.447381
+    ],
+    [
+      0.5067192599999544,
+      5.455514
+    ],
+    [
+      0.50475281800027,
+      6.243593
+    ],
+    [
+      0.5079272109996964,
+      5.424211
+    ],
+    [
+      0.5043129739997312,
+      5.736022
+    ],
+    [
+      0.5074408189993846,
+      5.930608
+    ],
+    [
+      0.5037023509994469,
+      5.426456
+    ],
+    [
+      0.5079492620006931,
+      6.243313
+    ],
+    [
+      0.5045834959992135,
+      5.940986
+    ],
+    [
+      0.5039958529996511,
+      6.269728
+    ],
+    [
+      0.5064713729998402,
+      5.457764
+    ],
+    [
+      0.5066755730003933,
+      5.969474
+    ],
+    [
+      0.5055810829999245,
+      5.501054
+    ],
+    [
+      0.5068995410001662,
+      6.32724
+    ],
+    [
+      0.5051526199995351,
+      6.016514
+    ],
+    [
+      0.50489008599925,
+      6.132379
+    ],
+    [
+      0.5071884729995872,
+      5.740462
+    ],
+    [
+      0.507138814999962,
+      5.426684
+    ],
+    [
+      0.5047410639999725,
+      5.938348
+    ],
+    [
+      0.5074167610000586,
+      5.699278
+    ],
+    [
+      0.5058685839994723,
+      6.212761
+    ],
+    [
+      0.5037726760001533,
+      5.892059
+    ],
+    [
+      0.5075898880004388,
+      5.695899
+    ],
+    [
+      0.5075564540002233,
+      5.369668
+    ],
+    [
+      0.5043395020002208,
+      6.197886
+    ],
+    [
+      0.5048502690005989,
+      5.882606
+    ],
+    [
+      0.5080912769999486,
+      5.697777
+    ],
+    [
+      0.5045536430006905,
+      6.212522
+    ],
+    [
+      0.5072481070001231,
+      5.395764
+    ],
+    [
+      0.5041888340001606,
+      5.716412
+    ],
+    [
+      0.5065509059995748,
+      5.906565
+    ],
+    [
+      0.50566878599966,
+      6.224404
+    ],
+    [
+      0.5034669070000746,
+      5.721946
+    ],
+    [
+      0.5066035039999406,
+      5.910317
+    ],
+    [
+      0.504995042999326,
+      6.236772
+    ],
+    [
+      0.503838368000288,
+      5.745074
+    ],
+    [
+      0.5091600650002874,
+      5.92655
+    ],
+    [
+      0.505577515999903,
+      6.262256
+    ],
+    [
+      0.5060286319994702,
+      5.946395
+    ],
+    [
+      0.5090924410005755,
+      5.759642
+    ],
+    [
+      0.5044134769996163,
+      6.270064
+    ],
+    [
+      0.5094291060004252,
+      5.738428
+    ],
+    [
+      0.5059370770004534,
+      5.930984
+    ],
+    [
+      0.5050205299994559,
+      6.249511
+    ],
+    [
+      0.5073708809995878,
+      5.927145
+    ],
+    [
+      0.5117879190001986,
+      5.726321
+    ],
+    [
+      0.5041979449997598,
+      5.411568
+    ],
+    [
+      0.5085790559996894,
+      6.239437
+    ],
+    [
+      0.5041012080000655,
+      5.922615
+    ],
+    [
+      0.5078093160000208,
+      5.741172
+    ],
+    [
+      0.5054988189995129,
+      5.433877
+    ],
+    [
+      0.5064316220004912,
+      6.250982
+    ],
+    [
+      0.5042286159996365,
+      5.933043
+    ],
+    [
+      0.5072962029998962,
+      5.747002
+    ],
+    [
+      0.5047887120008454,
+      6.256526
+    ],
+    [
+      0.5049668720002956,
+      5.958739
+    ],
+    [
+      0.5091358130002845,
+      5.54529
+    ],
+    [
+      0.504036473999804,
+      6.056066
+    ],
+    [
+      0.5032691139995222,
+      6.171153
+    ],
+    [
+      0.5053638469998987,
+      5.357361
+    ],
+    [
+      0.5043232469997747,
+      5.683449
+    ],
+    [
+      0.5042544950001684,
+      5.370584
+    ],
+    [
+      0.5046585449999839,
+      5.875737
+    ],
+    [
+      0.506078462000005,
+      5.684139
+    ],
+    [
+      0.5051788649998343,
+      6.194168
+    ],
+    [
+      0.508511136999914,
+      5.372659
+    ],
+    [
+      0.5039396580004905,
+      5.889372
+    ],
+    [
+      0.5042394510001031,
+      5.408401
+    ],
+    [
+      0.5070571510004811,
+      6.217858
+    ],
+    [
+      0.504033929999423,
+      5.919936
+    ],
+    [
+      0.5084081380000498,
+      5.736809
+    ],
+    [
+      0.5037879980000071,
+      5.426312
+    ],
+    [
+      0.5072391980002067,
+      6.246091
+    ],
+    [
+      0.5056787329995132,
+      5.752411
+    ],
+    [
+      0.5068670159998874,
+      5.938011
+    ],
+    [
+      0.5054727950000597,
+      6.264392
+    ],
+    [
+      0.5102011630006018,
+      5.471165
+    ],
+    [
+      0.5034196970000266,
+      6.010561
+    ],
+    [
+      0.5045633940007974,
+      6.144748
+    ],
+    [
+      0.5032132910000655,
+      5.752743
+    ],
+    [
+      0.5041725040000529,
+      6.263081
+    ],
+    [
+      0.5054628879997836,
+      5.955691
+    ],
+    [
+      0.5084956440005044,
+      5.772682
+    ],
+    [
+      0.5040241540000352,
+      6.279418
+    ],
+    [
+      0.5038936840001043,
+      5.959876
+    ],
+    [
+      0.5075409139999465,
+      5.769583
+    ],
+    [
+      0.5111048870003287,
+      6.287376
+    ],
+    [
+      0.5037721199996668,
+      5.945905
+    ],
+    [
+      0.5060445350000009,
+      5.750742
+    ],
+    [
+      0.5044684709991998,
+      6.257075
+    ],
+    [
+      0.5072561599999972,
+      5.439682
+    ],
+    [
+      0.5039375000005748,
+      5.787579
+    ],
+    [
+      0.5058304060003138,
+      6.29775
+    ],
+    [
+      0.5092598439996436,
+      5.441245
+    ],
+    [
+      0.5037248600001476,
+      6.006288
+    ],
+    [
+      0.5065674959996613,
+      5.813602
+    ],
+    [
+      0.5054658750004819,
+      6.281599
+    ],
+    [
+      0.508882428999641,
+      5.451228
+    ],
+    [
+      0.5051489059997039,
+      5.965745
+    ],
+    [
+      0.5084426639996309,
+      5.784878
+    ],
+    [
+      0.5049441380006101,
+      6.31427
+    ],
+    [
+      0.5082325729999866,
+      5.496182
+    ],
+    [
+      0.5044841910003015,
+      6.026297
+    ],
+    [
+      0.5069448429994736,
+      5.844019
+    ],
+    [
+      0.5051103929999954,
+      6.368198
+    ],
+    [
+      0.5095945600005507,
+      5.540323
+    ],
+    [
+      0.5051707200000237,
+      6.069875
+    ],
+    [
+      0.5156681070002378,
+      5.873136
+    ],
+    [
+      0.503268577000199,
+      6.387856
+    ],
+    [
+      0.5065165930000148,
+      5.567551
+    ],
+    [
+      0.504696724000496,
+      6.098057
+    ],
+    [
+      0.5043289550003465,
+      5.900149
+    ],
+    [
+      0.5060267720000411,
+      6.410442
+    ],
+    [
+      0.5082388310001988,
+      5.611566
+    ],
+    [
+      0.505727855999794,
+      6.136561
+    ],
+    [
+      0.5049394460002077,
+      5.813234
+    ],
+    [
+      0.5061974079999345,
+      6.26174
+    ]
+  ],
+  "completed_db": 240,
+  "completed": 240,
+  "rejected": 334
+}

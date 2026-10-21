@@ -1,139 +1,82 @@
-import pandas as pd
-import pytest
+"""HTTP admission tests: no broker or DB, boundary is mocked."""
 
-from issue_intelligence_platform.main import app, lifespan
-from issue_intelligence_platform.ml.model_service import model_service
+from unittest.mock import AsyncMock
+from uuid import uuid4
+
+from issue_intelligence_platform.api.routes import process as routes
+from issue_intelligence_platform.main import app
+from issue_intelligence_platform.pipeline.rabbit import PublishUncertain, QueueFull
 
 
-async def test_process_returns_prediction(client, monkeypatch) -> None:
-    def fake_predict(*, summary: str, description: str) -> str:
-        assert summary == "Node fails"
-        assert description == "Startup error"
-        return "High"
-
-    monkeypatch.setattr(model_service, "predict", fake_predict)
-    monkeypatch.setattr(model_service, "model_version", "7")
-
+async def test_create_returns_202_and_location(client, monkeypatch):
+    publish = AsyncMock(return_value=True)
+    monkeypatch.setattr(routes, "submit", publish)
+    app.state.publisher = object()
     response = await client.post(
-        "/process",
+        "/api/v1/tasks",
         json={
             "summary": "Node fails",
             "description": "Startup error",
         },
     )
-
-    assert response.status_code == 200
-    assert response.json() == {
-        "prediction": "High",
-        "model_name": "issue-priority-classifier",
-        "model_version": "7",
-        "model_alias": "champion",
-    }
+    assert response.status_code == 202
+    assert response.json()["status"] == "PENDING"
+    assert response.headers["Location"] == response.json()["status_url"]
+    publish.assert_awaited_once()
+    assert publish.call_args.args[3:] == ("Node fails", "Startup error")
 
 
-async def test_process_rejects_empty_summary(client) -> None:
-    response = await client.post(
-        "/process",
-        json={
-            "summary": "",
-            "description": "Startup error",
-        },
-    )
+async def test_queue_overload_is_503_with_retry_after(client, monkeypatch):
+    monkeypatch.setattr(routes, "submit", AsyncMock(side_effect=QueueFull()))
+    app.state.publisher = object()
+    response = await client.post("/api/v1/tasks", json={"summary": "Slow"})
+    assert response.status_code == 503
+    assert response.headers["Retry-After"].isdigit()
+    assert int(response.headers["Retry-After"]) >= 1
 
+
+async def test_ambiguous_publish_is_cancelled_before_503(client, monkeypatch):
+    # Integration of submit() cancellation is separately tested below.
+    monkeypatch.setattr(routes, "submit", AsyncMock(side_effect=PublishUncertain()))
+    app.state.publisher = object()
+    response = await client.post("/api/v1/tasks", json={"summary": "Slow"})
+    assert response.status_code == 503
+
+
+async def test_process_alias_now_async_202(client, monkeypatch):
+    monkeypatch.setattr(routes, "submit", AsyncMock(return_value=True))
+    app.state.publisher = object()
+    response = await client.post("/process", json={"summary": "Previous URL"})
+    assert response.status_code == 202
+
+
+async def test_invalid_summary_422(client):
+    response = await client.post("/api/v1/tasks", json={"summary": ""})
     assert response.status_code == 422
 
 
-async def test_process_does_not_reload_model_per_request(
-    client,
-    monkeypatch,
-) -> None:
-    predict_calls = 0
-
-    def fake_predict(*, summary: str, description: str) -> str:
-        nonlocal predict_calls
-        predict_calls += 1
-        return "Normal"
-
-    def forbidden_load() -> None:
-        raise AssertionError("Model must not be loaded during /process")
-
-    monkeypatch.setattr(model_service, "predict", fake_predict)
-    monkeypatch.setattr(model_service, "load", forbidden_load)
-    monkeypatch.setattr(model_service, "model_version", "1")
-
-    payload = {
-        "summary": "Test issue",
-        "description": "Test description",
-    }
-
-    first = await client.post("/process", json=payload)
-    second = await client.post("/process", json=payload)
-
-    assert first.status_code == 200
-    assert second.status_code == 200
-    assert predict_calls == 2
+async def test_get_known_task(client, monkeypatch):
+    fake = {"task_id": str(uuid4()), "status": "SUCCEEDED", "prediction": "High"}
+    monkeypatch.setattr(routes.store, "get", AsyncMock(return_value=fake))
+    response = await client.get("/api/v1/tasks/" + fake["task_id"])
+    assert response.status_code == 200
+    assert response.json()["prediction"] == "High"
 
 
-async def test_lifespan_loads_model_once(monkeypatch) -> None:
-    load_calls = 0
-
-    def fake_load() -> None:
-        nonlocal load_calls
-        load_calls += 1
-
-    monkeypatch.setattr(model_service, "load", fake_load)
-
-    async with lifespan(app):
-        assert load_calls == 1
-
-    assert load_calls == 1
+async def test_get_unknown_task_404(client, monkeypatch):
+    monkeypatch.setattr(routes.store, "get", AsyncMock(return_value=None))
+    response = await client.get(f"/api/v1/tasks/{uuid4()}")
+    assert response.status_code == 404
 
 
-async def test_startup_fails_when_model_cannot_be_loaded(
-    monkeypatch,
-) -> None:
-    def failing_load() -> None:
-        raise RuntimeError("MLflow unavailable")
+async def test_api_sheds_concurrent_publish_without_db_write(client, monkeypatch):
+    from asyncio import Queue
 
-    monkeypatch.setattr(model_service, "load", failing_load)
-
-    with pytest.raises(RuntimeError, match="MLflow unavailable"):
-        async with lifespan(app):
-            pass
-
-
-def test_model_service_predict_uses_loaded_model() -> None:
-    class FakeModel:
-        def predict(self, data: pd.DataFrame):
-            assert list(data.columns) == ["text"]
-            assert data.iloc[0]["text"] == "Node fails\nStartup error"
-            return ["Urgent"]
-
-    previous_model = model_service.model
-
-    try:
-        model_service.model = FakeModel()
-
-        prediction = model_service.predict(
-            summary="Node fails",
-            description="Startup error",
-        )
-
-        assert prediction == "Urgent"
-    finally:
-        model_service.model = previous_model
-
-
-def test_model_service_predict_fails_when_model_is_not_loaded() -> None:
-    previous_model = model_service.model
-
-    try:
-        model_service.model = None
-
-        with pytest.raises(RuntimeError, match="Model is not loaded"):
-            model_service.predict(
-                summary="Node fails",
-                description="Startup error",
-            )
-    finally:
-        model_service.model = previous_model
+    queue = Queue(maxsize=1)  # intentionally no available tokens
+    app.state.admission_slots = queue
+    send = AsyncMock()
+    monkeypatch.setattr(routes, "submit", send)
+    response = await client.post("/api/v1/tasks", json={"summary": "Very busy"})
+    assert response.status_code == 503
+    assert response.headers["Retry-After"].isdigit()
+    send.assert_not_awaited()

@@ -1,11 +1,15 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 import mlflow
 import pandas as pd
 from mlflow import MlflowClient
-from mlflow.pyfunc import PyFuncModel
 
 from issue_intelligence_platform.core.config import settings
+
+if TYPE_CHECKING:
+    from mlflow.pyfunc import PyFuncModel
 
 
 class ModelService:

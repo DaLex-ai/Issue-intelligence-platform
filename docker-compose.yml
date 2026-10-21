@@ -35,6 +35,22 @@ services:
         max-size: "10m"
         max-file: "3"
 
+  rabbitmq:
+    image: rabbitmq:4.1-management-alpine
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - backend
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+
   app:
     build:
       context: .
@@ -44,6 +60,13 @@ services:
       MLFLOW_TRACKING_URI: http://mlflow:5000
       MLFLOW_MODEL_NAME: issue-priority-classifier
       MLFLOW_MODEL_ALIAS: champion
+      RABBIT_URL: amqp://guest:guest@rabbitmq:5672/
+      RABBIT_MAX_LENGTH: ${RABBIT_MAX_LENGTH:-20}
+      ENABLE_BACKPRESSURE: ${ENABLE_BACKPRESSURE:-true}
+      API_RETRY_AFTER_SECONDS: ${API_RETRY_AFTER_SECONDS:-0}
+      API_PUBLISH_SLOTS: ${API_PUBLISH_SLOTS:-4}
+      WORKER_CONCURRENCY: ${WORKER_CONCURRENCY:-2}
+      INFERENCE_DELAY_SECONDS: ${INFERENCE_DELAY_SECONDS:-0.5}
 
     ports:
       - "8000:8000"
@@ -52,6 +75,8 @@ services:
       db:
         condition: service_healthy
       mlflow:
+        condition: service_healthy
+      rabbitmq:
         condition: service_healthy
 
     networks:
@@ -77,6 +102,65 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+
+  worker:
+    build:
+      context: .
+    command: ["python", "-m", "issue_intelligence_platform.pipeline.worker"]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+      MLFLOW_MODEL_NAME: issue-priority-classifier
+      MLFLOW_MODEL_ALIAS: champion
+      RABBIT_URL: amqp://guest:guest@rabbitmq:5672/
+      RABBIT_MAX_LENGTH: ${RABBIT_MAX_LENGTH:-20}
+      ENABLE_BACKPRESSURE: ${ENABLE_BACKPRESSURE:-true}
+      WORKER_CONCURRENCY: ${WORKER_CONCURRENCY:-2}
+      WORKER_PREFETCH_COUNT: ${WORKER_PREFETCH_COUNT:-2}
+      INFERENCE_DELAY_SECONDS: ${INFERENCE_DELAY_SECONDS:-0.5}
+      WORKER_MAX_ATTEMPTS: ${WORKER_MAX_ATTEMPTS:-3}
+      WORKER_RETRY_DELAY_SECONDS: ${WORKER_RETRY_DELAY_SECONDS:-0.25}
+    depends_on:
+      db:
+        condition: service_healthy
+      mlflow:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - backend
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8081/')"]
+      interval: 5s
+      timeout: 3s
+      retries: 4
+      start_period: 60s
+    stop_grace_period: 75s
+    mem_limit: 768m
+    cpus: 2.0
+
+  batch:
+    build:
+      context: .
+    profiles: ["batch"]
+    command: ["python", "-m", "issue_intelligence_platform.pipeline.batch", "/app/data/issues.jsonl"]
+    volumes:
+      - ./data:/app/data:ro
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      RABBIT_URL: amqp://guest:guest@rabbitmq:5672/
+      RABBIT_MAX_LENGTH: ${RABBIT_MAX_LENGTH:-20}
+      ENABLE_BACKPRESSURE: ${ENABLE_BACKPRESSURE:-true}
+      BATCH_BACKOFF_MIN_SECONDS: ${BATCH_BACKOFF_MIN_SECONDS:-0.05}
+      BATCH_BACKOFF_MAX_SECONDS: ${BATCH_BACKOFF_MAX_SECONDS:-1.0}
+    depends_on:
+      db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - backend
+    mem_limit: 256m
 
   mlflow-db:
     image: postgres:17-alpine
@@ -112,8 +196,8 @@ services:
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
 
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - "19000:9000"
+      - "19001:9001"
 
     volumes:
       - minio_data:/data
@@ -205,6 +289,7 @@ services:
 
 volumes:
   postgres_data:
+  rabbitmq_data:
   mlflow_postgres_data:
   minio_data:
 

@@ -10,12 +10,12 @@ ENV PATH="/app/.venv/bin:$PATH"
 
 COPY pyproject.toml uv.lock ./
 
-RUN uv sync --frozen --no-dev --no-install-project
+RUN uv sync --no-dev --no-install-project
 
 COPY README.md ./
 COPY src ./src
 
-RUN uv sync --frozen --no-dev
+RUN uv sync --no-dev
 
 RUN useradd --create-home --uid 10001 appuser
 

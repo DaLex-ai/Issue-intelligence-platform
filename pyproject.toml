@@ -10,6 +10,7 @@ requires-python = ">=3.11"
 dependencies = [
     "asyncpg>=0.31.0",
     "fastapi>=0.141.1",
+    "faststream[rabbit]==0.7.0",
     "matplotlib>=3.11.2",
     "mlflow==3.16.1",
     "pandas>=3.0.6",
@@ -26,10 +27,12 @@ build-backend = "uv_build"
 [dependency-groups]
 dev = [
     "httpx>=0.28.1",
+    "aiosqlite>=0.21.0",
     "pre-commit>=4.6.2",
     "pytest>=9.1.1",
     "pytest-asyncio>=1.4.0",
     "pytest-cov>=7.1.0",
+    "testcontainers[rabbitmq]>=4.0.0",
     "ruff>=0.16.7",
 ]
 
@@ -43,6 +46,7 @@ select = ["E4", "E7", "E9", "F", "I", "B", "UP"]
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+markers = ["integration: requires a real Docker-backed broker"]
 
 [tool.coverage.run]
 source = ["issue_intelligence_platform"]

@@ -1,0 +1,4 @@
+{"summary":"Application crashes on startup","description":"Service exits when the configuration file is missing"}
+{"summary":"Storage node hangs during shutdown","description":"Worker waits for a network connection"}
+{"summary":"Index rebuild produces inconsistent rows","description":"Observed after a cluster restart"}
+{"summary":"The dashboard reports a wrong priority","description":"Unexpected priority label after issue submission"}
