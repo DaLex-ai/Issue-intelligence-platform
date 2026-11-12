@@ -1,3 +1,17 @@
+include:
+  - observability/compose.yaml
+
+x-telemetry: &telemetry
+  OTEL_SDK_DISABLED: ${OTEL_SDK_DISABLED:-true}
+  OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT:-http://otel-collector:4318}
+  OTEL_TRACES_SAMPLER: ${OTEL_TRACES_SAMPLER:-parentbased_always_on}
+  OTEL_TRACES_SAMPLER_ARG: ${OTEL_TRACES_SAMPLER_ARG:-1}
+  OTEL_TRACES_EXPORTER: ${OTEL_TRACES_EXPORTER:-otlp}
+  OTEL_METRICS_EXPORTER: ${OTEL_METRICS_EXPORTER:-otlp}
+  OTEL_RESOURCE_ATTRIBUTES: ${OTEL_RESOURCE_ATTRIBUTES:-}
+  IIP_ENV: ${IIP_ENV:-local}
+  LOG_LEVEL: ${LOG_LEVEL:-INFO}
+
 services:
   db:
     image: postgres:17-alpine
@@ -43,6 +57,7 @@ services:
       - "15672:15672"
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
+      - ./observability/rabbitmq-enabled-plugins:/etc/rabbitmq/enabled_plugins:ro
     networks:
       - backend
     healthcheck:
@@ -56,6 +71,8 @@ services:
       context: .
 
     environment:
+      <<: *telemetry
+      OTEL_SERVICE_NAME: ${OTEL_SERVICE_NAME_APP:-app}
       DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
       MLFLOW_TRACKING_URI: http://mlflow:5000
       MLFLOW_MODEL_NAME: issue-priority-classifier
@@ -63,6 +80,10 @@ services:
       RABBIT_URL: amqp://guest:guest@rabbitmq:5672/
       RABBIT_MAX_LENGTH: ${RABBIT_MAX_LENGTH:-20}
       ENABLE_BACKPRESSURE: ${ENABLE_BACKPRESSURE:-true}
+      PUBLICATION_TIMEOUT_SECONDS: ${PUBLICATION_TIMEOUT_SECONDS:-30}
+      PUBLICATION_RECONCILE_SECONDS: ${PUBLICATION_RECONCILE_SECONDS:-5}
+      PUBLISHER_CONFIRM_TIMEOUT: ${PUBLISHER_CONFIRM_TIMEOUT:-2}
+      API_OPERATION_TIMEOUT_SECONDS: ${API_OPERATION_TIMEOUT_SECONDS:-5}
       API_RETRY_AFTER_SECONDS: ${API_RETRY_AFTER_SECONDS:-0}
       API_PUBLISH_SLOTS: ${API_PUBLISH_SLOTS:-4}
       WORKER_CONCURRENCY: ${WORKER_CONCURRENCY:-2}
@@ -88,7 +109,7 @@ services:
           "CMD",
           "python",
           "-c",
-          "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')",
+          "import urllib.request; urllib.request.urlopen('http://localhost:8000/readyz', timeout=2)",
         ]
       interval: 10s
       timeout: 3s
@@ -108,6 +129,8 @@ services:
       context: .
     command: ["python", "-m", "issue_intelligence_platform.pipeline.worker"]
     environment:
+      <<: *telemetry
+      OTEL_SERVICE_NAME: ${OTEL_SERVICE_NAME_WORKER:-worker}
       DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
       MLFLOW_TRACKING_URI: http://mlflow:5000
       MLFLOW_MODEL_NAME: issue-priority-classifier
@@ -115,11 +138,17 @@ services:
       RABBIT_URL: amqp://guest:guest@rabbitmq:5672/
       RABBIT_MAX_LENGTH: ${RABBIT_MAX_LENGTH:-20}
       ENABLE_BACKPRESSURE: ${ENABLE_BACKPRESSURE:-true}
+      PUBLICATION_TIMEOUT_SECONDS: ${PUBLICATION_TIMEOUT_SECONDS:-30}
+      PUBLICATION_RECONCILE_SECONDS: ${PUBLICATION_RECONCILE_SECONDS:-5}
+      PUBLISHER_CONFIRM_TIMEOUT: ${PUBLISHER_CONFIRM_TIMEOUT:-2}
+      API_OPERATION_TIMEOUT_SECONDS: ${API_OPERATION_TIMEOUT_SECONDS:-5}
       WORKER_CONCURRENCY: ${WORKER_CONCURRENCY:-2}
       WORKER_PREFETCH_COUNT: ${WORKER_PREFETCH_COUNT:-2}
       INFERENCE_DELAY_SECONDS: ${INFERENCE_DELAY_SECONDS:-0.5}
       WORKER_MAX_ATTEMPTS: ${WORKER_MAX_ATTEMPTS:-3}
       WORKER_RETRY_DELAY_SECONDS: ${WORKER_RETRY_DELAY_SECONDS:-0.25}
+      WORKER_CLAIM_TIMEOUT_SECONDS: ${WORKER_CLAIM_TIMEOUT_SECONDS:-30}
+      WORKER_HEARTBEAT_SECONDS: ${WORKER_HEARTBEAT_SECONDS:-5}
     depends_on:
       db:
         condition: service_healthy
@@ -147,10 +176,16 @@ services:
     volumes:
       - ./data:/app/data:ro
     environment:
+      <<: *telemetry
+      OTEL_SERVICE_NAME: ${OTEL_SERVICE_NAME_BATCH:-batch}
       DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
       RABBIT_URL: amqp://guest:guest@rabbitmq:5672/
       RABBIT_MAX_LENGTH: ${RABBIT_MAX_LENGTH:-20}
       ENABLE_BACKPRESSURE: ${ENABLE_BACKPRESSURE:-true}
+      PUBLICATION_TIMEOUT_SECONDS: ${PUBLICATION_TIMEOUT_SECONDS:-30}
+      PUBLICATION_RECONCILE_SECONDS: ${PUBLICATION_RECONCILE_SECONDS:-5}
+      PUBLISHER_CONFIRM_TIMEOUT: ${PUBLISHER_CONFIRM_TIMEOUT:-2}
+      API_OPERATION_TIMEOUT_SECONDS: ${API_OPERATION_TIMEOUT_SECONDS:-5}
       BATCH_BACKOFF_MIN_SECONDS: ${BATCH_BACKOFF_MIN_SECONDS:-0.05}
       BATCH_BACKOFF_MAX_SECONDS: ${BATCH_BACKOFF_MAX_SECONDS:-1.0}
     depends_on:
@@ -226,13 +261,12 @@ services:
       - backend
 
     entrypoint: >
-      /bin/sh -c "
+      /bin/sh -ec "
       mc alias set local http://minio:9000
       ${MINIO_ROOT_USER}
       ${MINIO_ROOT_PASSWORD};
       mc mb --ignore-existing
       local/${MLFLOW_ARTIFACT_BUCKET};
-      exit 0;
       "
 
   mlflow:

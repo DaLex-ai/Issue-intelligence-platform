@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import math
 
 import mlflow
 from mlflow import MlflowClient
@@ -37,6 +38,25 @@ def main() -> None:
 
     mlflow.set_tracking_uri(TRACKING_URI)
 
+    client = MlflowClient()
+    candidates = [
+        (args.logistic_run_id, "LogisticRegression"),
+        (args.svc_run_id, "LinearSVC"),
+    ]
+    scores = []
+    for run_id, expected_model in candidates:
+        run = client.get_run(run_id)
+        score = run.data.metrics.get("macro_f1")
+        if (
+            run.info.status != "FINISHED"
+            or run.data.params.get("model") != expected_model
+            or score is None
+            or not math.isfinite(score)
+            or not 0 <= score <= 1
+        ):
+            raise ValueError(f"Invalid completed {expected_model} run: {run_id}")
+        scores.append(score)
+
     logistic_version = register_run(
         args.logistic_run_id,
         "tfidf-logistic-regression",
@@ -47,15 +67,14 @@ def main() -> None:
         "tfidf-linear-svc",
     )
 
-    client = MlflowClient()
-
+    champion = logistic_version if scores[0] >= scores[1] else svc_version
     client.set_registered_model_alias(
         MODEL_NAME,
         "champion",
-        logistic_version.version,
+        champion.version,
     )
 
-    print(f"Alias champion -> version {logistic_version.version}")
+    print(f"Alias champion -> version {champion.version}")
     print(f"SVC candidate -> version {svc_version.version}")
 
 

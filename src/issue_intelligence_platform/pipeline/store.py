@@ -1,14 +1,12 @@
-"""Atomic per-task state transitions, also providing the idempotency boundary.
+"""Transactional state transitions; the attempt number fences stale workers."""
 
-The message is acknowledged only after a committed SUCCEEDED/FAILED state.
-The task UUID is the unique storage key; row locks serialize duplicate deliveries.
-"""
-
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from enum import StrEnum
+from typing import NamedTuple
 from uuid import UUID
 
-from sqlalchemy import DateTime, Float, Integer, String, Text
+from sqlalchemy import DateTime, Float, Integer, String, Text, update
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
@@ -24,6 +22,18 @@ class TaskState(StrEnum):
     SUCCEEDED = "SUCCEEDED"
     FAILED = "FAILED"
     REJECTED = "REJECTED"
+
+
+class PublicationInProgress(Exception):
+    """Another publisher still owns this task's admission."""
+
+
+class Claim(NamedTuple):
+    decision: str
+    attempt: int = 0
+    summary: str = ""
+    description: str = ""
+    created_at: datetime | None = None
 
 
 class Task(Base):
@@ -73,83 +83,148 @@ class TaskStore:
             obj = await session.get(Task, str(task_id))
             return as_dict(obj) if obj is not None else None
 
-    async def stage(self, task_id: UUID, summary: str, description: str) -> bool:
-        """Reserve a stable ID; allow recovery of abandoned batch attempts.
+    async def expire_publications(self, timeout: float) -> int:
+        """Cancel abandoned admissions, never republish an uncertain message."""
+        cutoff = datetime.now(UTC) - timedelta(seconds=timeout)
+        async with self.sessions.begin() as session:
+            result = await session.execute(
+                update(Task)
+                .where(Task.state == TaskState.PUBLISHING, Task.updated_at < cutoff)
+                .values(
+                    state=TaskState.REJECTED,
+                    last_error="publication expired before admission completed",
+                    updated_at=datetime.now(UTC),
+                )
+            )
+            return result.rowcount
 
-        Returns False for an already accepted/completed task. API uses fresh UUIDs.
-        """
+    async def stage(
+        self, task_id: UUID, summary: str, description: str
+    ) -> datetime | None:
+        # A missing row cannot be locked. Resolve a concurrent INSERT using the
+        # primary-key constraint, then inspect the winner in a new transaction.
+        try:
+            return await self._stage(task_id, summary, description)
+        except IntegrityError:
+            async with self.sessions() as session:
+                if await session.get(Task, str(task_id)) is None:
+                    raise
+            return await self._stage(task_id, summary, description)
+
+    async def _stage(
+        self, task_id: UUID, summary: str, description: str
+    ) -> datetime | None:
         async with self.sessions.begin() as session:
             obj = await session.get(Task, str(task_id), with_for_update=True)
             if obj is not None:
                 if obj.summary != summary or obj.description != description:
                     raise ValueError("task ID reused with different payload")
-                if obj.state in {
-                    TaskState.PENDING,
-                    TaskState.PROCESSING,
-                    TaskState.SUCCEEDED,
-                    TaskState.FAILED,
-                }:
-                    return False
+                if obj.state == TaskState.PUBLISHING:
+                    raise PublicationInProgress("admission is still in progress")
+                if obj.state != TaskState.REJECTED:
+                    return None
                 obj.state = TaskState.PUBLISHING
                 obj.last_error = None
-            else:
+            token = datetime.now(UTC)
+            if obj is None:
                 session.add(
                     Task(
                         id=str(task_id),
                         summary=summary,
                         description=description,
                         state=TaskState.PUBLISHING,
+                        updated_at=token,
                     )
                 )
-        return True
+            else:
+                token = max(
+                    token,
+                    obj.updated_at.replace(tzinfo=UTC) + timedelta(microseconds=1),
+                )
+                obj.updated_at = token
+        return token
 
-    async def published(self, task_id: UUID) -> None:
+    async def published(self, task_id: UUID, *, publication_token: datetime) -> bool:
         async with self.sessions.begin() as session:
             obj = await session.get(Task, str(task_id), with_for_update=True)
-            if obj is not None and obj.state == TaskState.PUBLISHING:
-                obj.state = TaskState.PENDING
+            if (
+                obj is None
+                or obj.state != TaskState.PUBLISHING
+                or obj.updated_at.replace(tzinfo=UTC) != publication_token
+            ):
+                return False
+            obj.state = TaskState.PENDING
+            return True
 
-    async def rejected(self, task_id: UUID, error: str) -> bool:
-        """Cancellation wins over an in-flight result unless already terminal.
-
-        Worker checks state again before committing a result.
-        """
+    async def rejected(
+        self, task_id: UUID, error: str, *, publication_token: datetime
+    ) -> bool:
         async with self.sessions.begin() as session:
             obj = await session.get(Task, str(task_id), with_for_update=True)
-            if obj is None or obj.state in {TaskState.SUCCEEDED, TaskState.FAILED}:
+            if (
+                obj is None
+                or obj.state != TaskState.PUBLISHING
+                or obj.updated_at.replace(tzinfo=UTC) != publication_token
+            ):
                 return False
             obj.state = TaskState.REJECTED
             obj.last_error = error[:2000]
             return True
 
-    async def claim(self, task_id: UUID, max_attempts: int) -> str:
+    async def claim(
+        self,
+        task_id: UUID,
+        max_attempts: int,
+        *,
+        redelivered: bool = False,
+        expected_payload: tuple[str, str] | None = None,
+        lease_seconds: float = 30.0,
+    ) -> Claim:
         async with self.sessions.begin() as session:
             obj = await session.get(Task, str(task_id), with_for_update=True)
             if obj is None:
-                return "unknown"
-            if obj.state in {TaskState.SUCCEEDED, TaskState.FAILED, TaskState.REJECTED}:
-                return "terminal"
+                return Claim("unknown")
+            if expected_payload is not None and expected_payload != (
+                obj.summary,
+                obj.description,
+            ):
+                return Claim("invalid")
+            if obj.state == TaskState.FAILED:
+                return Claim("failed", obj.attempts)
+            if obj.state in {TaskState.SUCCEEDED, TaskState.REJECTED}:
+                return Claim("terminal")
+            if obj.state == TaskState.PUBLISHING:
+                return Claim("publishing")
             if obj.state == TaskState.PROCESSING:
-                # A duplicate delivery is not permitted to steal an active claim.
-                return "busy"
+                expired = obj.updated_at.replace(tzinfo=UTC) < (
+                    datetime.now(UTC) - timedelta(seconds=lease_seconds)
+                )
+                if not redelivered or not expired:
+                    return Claim("busy")
             if obj.attempts >= max_attempts:
                 obj.state = TaskState.FAILED
                 obj.last_error = "max attempts exhausted before redelivery"
-                return "exhausted"
+                return Claim("failed", obj.attempts)
+            # Recovery and acquisition share one transaction. Never reset this
+            # counter: it is also the fencing token checked on every completion.
             obj.state = TaskState.PROCESSING
             obj.attempts += 1
-            return "claimed"
+            return Claim(
+                "claimed", obj.attempts, obj.summary, obj.description, obj.created_at
+            )
 
-    async def recover(self, task_id: UUID) -> None:
-        """Used only on broker redelivery after a consumer was killed.
-
-        Unique processing lives in a single task row. A redelivery cannot
-        occur while the original live consumer still owns the same delivery.
-        """
+    async def renew(self, task_id: UUID, attempt: int) -> bool:
         async with self.sessions.begin() as session:
-            obj = await session.get(Task, str(task_id), with_for_update=True)
-            if obj is not None and obj.state == TaskState.PROCESSING:
-                obj.state = TaskState.PENDING
+            result = await session.execute(
+                update(Task)
+                .where(
+                    Task.id == str(task_id),
+                    Task.state == TaskState.PROCESSING,
+                    Task.attempts == attempt,
+                )
+                .values(updated_at=datetime.now(UTC))
+            )
+            return result.rowcount == 1
 
     async def succeed(
         self,
@@ -159,10 +234,16 @@ class TaskStore:
         model_alias: str,
         model_version: str,
         inference_seconds: float,
+        *,
+        attempt: int,
     ) -> bool:
         async with self.sessions.begin() as session:
             obj = await session.get(Task, str(task_id), with_for_update=True)
-            if obj is None or obj.state != TaskState.PROCESSING:
+            if (
+                obj is None
+                or obj.state != TaskState.PROCESSING
+                or obj.attempts != attempt
+            ):
                 return False
             obj.state = TaskState.SUCCEEDED
             obj.prediction = prediction
@@ -173,11 +254,22 @@ class TaskStore:
             obj.last_error = None
             return True
 
-    async def fail(self, task_id: UUID, error: str, max_attempts: int) -> bool:
-        """Returns True when all attempts have been consumed -> dead-letter."""
+    async def fail(
+        self,
+        task_id: UUID,
+        error: str,
+        max_attempts: int,
+        *,
+        attempt: int,
+    ) -> bool:
+        """A stale owner cannot fail or roll back a newer attempt."""
         async with self.sessions.begin() as session:
             obj = await session.get(Task, str(task_id), with_for_update=True)
-            if obj is None or obj.state != TaskState.PROCESSING:
+            if (
+                obj is None
+                or obj.state != TaskState.PROCESSING
+                or obj.attempts != attempt
+            ):
                 return False
             obj.last_error = error[:2000]
             exhausted = obj.attempts >= max_attempts

@@ -1,0 +1,99 @@
+services:
+  alloy:
+    image: grafana/alloy:${ALLOY_VERSION:-v1.8.3}
+    profiles: [logs, observability]
+    user: "0"
+    command: [run, --storage.path=/var/lib/alloy, /etc/alloy/config.alloy]
+    environment:
+      IIP_COMPOSE_PROJECT: ${COMPOSE_PROJECT_NAME}
+    volumes:
+      - ./alloy/config.alloy:/etc/alloy/config.alloy:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - alloy_positions:/var/lib/alloy
+    mem_limit: 128m
+    networks: [backend]
+
+  loki:
+    image: grafana/loki:${LOKI_VERSION:-3.4.3}
+    profiles: [logs, observability]
+    user: "0"
+    command: [-config.file=/etc/loki/local.yaml]
+    volumes:
+      - ./loki.yaml:/etc/loki/local.yaml:ro
+      - loki_data:/loki
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://localhost:3100/ready"]
+      interval: 10s
+      timeout: 3s
+      retries: 12
+    mem_limit: 320m
+    networks: [backend]
+
+  tempo:
+    image: grafana/tempo:${TEMPO_VERSION:-2.7.2}
+    profiles: [traces, observability]
+    user: "0"
+    command: [-config.file=/etc/tempo.yaml]
+    volumes:
+      - ./tempo.yaml:/etc/tempo.yaml:ro
+      - tempo_data:/var/tempo
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://localhost:3200/ready"]
+      interval: 10s
+      timeout: 3s
+      retries: 12
+    mem_limit: 256m
+    networks: [backend]
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:${OTEL_COLLECTOR_VERSION:-0.128.0}
+    profiles: [traces, metrics, observability]
+    command: [--config=/etc/otelcol/config.yaml]
+    volumes:
+      - ./otel-collector.yaml:/etc/otelcol/config.yaml:ro
+    mem_limit: 160m
+    networks: [backend]
+
+  prometheus:
+    image: prom/prometheus:${PROMETHEUS_VERSION:-v3.3.0}
+    profiles: [metrics, observability]
+    command: [--config.file=/etc/prometheus/prometheus.yml, --storage.tsdb.retention.time=2d, --storage.tsdb.path=/prometheus]
+    volumes:
+      - ./prometheus.yaml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://localhost:9090/-/ready"]
+      interval: 10s
+      timeout: 3s
+      retries: 12
+    mem_limit: 256m
+    networks: [backend]
+
+  grafana:
+    image: grafana/grafana:${GRAFANA_VERSION:-11.6.0}
+    profiles: [observability]
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-local-observe}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_PLUGINS_PREINSTALL_DISABLED: "true"
+    ports:
+      - "127.0.0.1:${GRAFANA_PORT:-3001}:3000"
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana_data:/var/lib/grafana
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://localhost:3000/api/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 12
+    mem_limit: 288m
+    networks: [backend]
+
+volumes:
+  alloy_positions:
+  loki_data:
+  tempo_data:
+  prometheus_data:
+  grafana_data:

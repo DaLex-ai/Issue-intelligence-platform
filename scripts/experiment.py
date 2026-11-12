@@ -1,7 +1,7 @@
 """Reproducible RabbitMQ inference benchmark with verified completion.
 
 Run ONLY on an isolated development Compose project without unrelated tasks:
-    uv run python scripts/experiment.py --tasks 240 --period 1
+    uv run python scripts/experiment.py --tasks 240 --period 1 --allow-disruption
 
 Never removes database volumes. Redeclares a work queue only when it has no
 messages or consumers; does not delete the DLQ. Requires a registered model.
@@ -82,9 +82,9 @@ def memory_mib():
         "KiB": 1 / 1024,
         "MiB": 1,
         "GiB": 1024,
-        "kB": 1 / 1000,
-        "MB": 1,
-        "GB": 1000,
+        "kB": 1000 / 2**20,
+        "MB": 10**6 / 2**20,
+        "GB": 10**9 / 2**20,
     }
     output = {}
     for line in result.stdout.splitlines():
@@ -315,11 +315,15 @@ def run_one(label, limit, workers, tasks, period, run_id, timeout):
     def read_events():
         assert producer.stdout is not None
         for line in producer.stdout:
-            if line.startswith("METRIC "):
-                try:
-                    events.append({**json.loads(line[7:]), "seconds": time.time() - t0})
-                except ValueError:
-                    print(f"[{label}] Malformed METRIC: {line.rstrip()}")
+            try:
+                event = json.loads(line[7:] if line.startswith("METRIC ") else line)
+            except ValueError:
+                continue
+            if isinstance(event, dict) and event.get("event") in {
+                "publish_confirm",
+                "publish_rejected",
+            }:
+                events.append({**event, "seconds": time.time() - t0})
             else:
                 print(f"[{label}] {line.rstrip()}")
 
@@ -409,9 +413,22 @@ def saturated_rates(run):
             "worker": None,
         }
     threshold = 0.8 * run["limit"]
-    saturated = [s for s in samples if s["ready"] >= threshold and s["unacked"] > 0]
-    if len(saturated) < 3:
+    intervals = []
+    current = []
+    for sample in samples:
+        if sample["ready"] >= threshold and sample["unacked"] > 0:
+            current.append(sample)
+        else:
+            if len(current) >= 3:
+                intervals.append(current)
+            current = []
+    if len(current) >= 3:
+        intervals.append(current)
+    if not intervals:
         return None
+    saturated = max(
+        intervals, key=lambda rows: rows[-1]["seconds"] - rows[0]["seconds"]
+    )
     first, last = saturated[0], saturated[-1]
     interval = last["seconds"] - first["seconds"]
     if interval < 5:
@@ -472,7 +489,7 @@ def plot(runs):
         plt.close()
     for index, filename, title in (
         (0, "inference_time.png", "Inference execution time (seconds)"),
-        (1, "end_to_end_time.png", "Accepted-to-finished time (seconds)"),
+        (1, "end_to_end_time.png", "First SQL staging to finish (seconds)"),
     ):
         plt.figure(figsize=(10, 4))
         values = [[row[index] for row in run["latencies_seconds"]] for run in runs]
@@ -514,7 +531,7 @@ def summarize(runs):
         "",
         "| Сценарий | Успешно / отправлено | Ready, макс. | Unacked, макс. | "
         "Подтверждения/с в насыщении | ACK/с в насыщении | Отказов публикации | "
-        "Inference, среднее (с) | E2E после приёма, среднее (с) | Время опыта (с) |",
+        "Inference, среднее (с) | От первого stage до результата, среднее (с) | Время опыта (с) |",
         "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     rates = []
@@ -546,7 +563,7 @@ def summarize(runs):
         [
             "",
             "Показатели подтверждения публикации и ACK рассчитаны на интервале "
-            "с наблюдаемой загрузкой очереди не менее 80% её лимита; "
+            "на самом длинном непрерывном по samples участке с загрузкой не менее 80% лимита; "
             "если подходящего интервала нет, выводится «н/д». "
             "Для baseline указывается скорость короткого всплеска публикаций, "
             "а не стационарная скорость обработки.",
@@ -554,8 +571,8 @@ def summarize(runs):
             "`x-max-length` ограничивает `ready`, но не `unacked`; "
             "поэтому суммарное количество сообщений может превышать лимит `ready`.",
             "",
-            "Latency E2E измерена с момента создания принятой записи в БД, "
-            "не включает задержку источника до подтверждения публикации. "
+            "Длительность записи измерена с первого создания задачи в БД, "
+            "включает повторы публикации этой задачи, но не ожидание чтения строки источником. "
             "Это разные показатели и их нельзя смешивать.",
             "",
             "Память — величина `docker stats` для воркеров и batch-контейнера "
@@ -595,11 +612,14 @@ def summarize(runs):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--allow-disruption", action="store_true")
     parser.add_argument("--tasks", type=int, default=240)
     parser.add_argument("--period", type=float, default=1.0)
     parser.add_argument("--bounded-limit", type=int, default=20)
     parser.add_argument("--timeout", type=float, default=600)
     args = parser.parse_args()
+    if not args.allow_disruption:
+        parser.error("isolated Compose experiment requires --allow-disruption")
     if (
         args.tasks < 3
         or args.period <= 0

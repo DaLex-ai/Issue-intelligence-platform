@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import os
+
 import pandas as pd
 
 DATASET_URL = (
@@ -21,7 +23,7 @@ REQUIRED_COLUMNS = {
 
 
 def load_raw_dataset() -> pd.DataFrame:
-    df = pd.read_csv(DATASET_URL)
+    df = pd.read_csv(os.getenv("IIP_DATASET_PATH", DATASET_URL))
 
     missing_columns = REQUIRED_COLUMNS.difference(df.columns)
     if missing_columns:

@@ -1,8 +1,9 @@
+import asyncio
 import logging
 from time import perf_counter
 
 from asyncpg.exceptions import PostgresError
-from fastapi import APIRouter, status
+from fastapi import APIRouter, Request, status
 from fastapi.responses import JSONResponse
 from sqlalchemy import text
 from sqlalchemy.exc import SQLAlchemyError
@@ -66,3 +67,19 @@ async def health() -> JSONResponse:
                 },
             },
         )
+
+
+@router.get("/readyz")
+async def readyz(request: Request) -> JSONResponse:
+    async def check():
+        publisher = getattr(request.app.state, "publisher", None)
+        if publisher is None or not publisher.ready():
+            raise RuntimeError("publisher is unavailable")
+        async with engine.connect() as connection:
+            await connection.execute(text("SELECT 1"))
+
+    try:
+        await asyncio.wait_for(check(), timeout=2)
+    except (RuntimeError, SQLAlchemyError, OSError, PostgresError, TimeoutError):
+        return JSONResponse(status_code=503, content={"status": "unavailable"})
+    return JSONResponse(content={"status": "ok"})

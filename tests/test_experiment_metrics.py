@@ -127,3 +127,9 @@ def test_visualizations_are_generated_without_actual_services(tmp_path, monkeypa
     assert (tmp_path / "queue_total.png").exists()
     assert (tmp_path / "db_completed.png").exists()
     assert (tmp_path / "pipeline_memory.png").exists()
+
+
+def test_saturation_does_not_bridge_an_unsaturated_gap():
+    run = run_record()
+    run["samples"][2]["ready"] = 0
+    assert experiment.saturated_rates(run) is None

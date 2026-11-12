@@ -1,0 +1,2741 @@
+{
+  "label": "baseline",
+  "limit": 100000,
+  "workers": 1,
+  "tasks": 240,
+  "duration": 66.91709232330322,
+  "samples": [
+    {
+      "seconds": 0.04,
+      "ready": 0,
+      "unacked": 0,
+      "ack_count": 0,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 66.89,
+        "issue-intelligence-platform-worker-2": 273.9,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.1,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.14,
+        "issue-intelligence-platform-db-1": 25.07,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15,
+        "--": 0.0
+      }
+    },
+    {
+      "seconds": 2.88,
+      "ready": 0,
+      "unacked": 0,
+      "ack_count": 0,
+      "memory_mib": {
+        "issue-intelligence-platform-batch-run-294964ba6df8": 59.83,
+        "issue-intelligence-platform-app-1": 66.93,
+        "issue-intelligence-platform-worker-2": 275.3,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 110.5,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.14,
+        "issue-intelligence-platform-db-1": 35.36,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 6.62,
+      "ready": 0,
+      "unacked": 0,
+      "ack_count": 0,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 66.93,
+        "issue-intelligence-platform-worker-2": 275.5,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.3,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.14,
+        "issue-intelligence-platform-db-1": 33.11,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 10.72,
+      "ready": 0,
+      "unacked": 0,
+      "ack_count": 18,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 66.95,
+        "issue-intelligence-platform-worker-2": 275.8,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.5,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.14,
+        "issue-intelligence-platform-db-1": 32.87,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 14.8,
+      "ready": 0,
+      "unacked": 222,
+      "ack_count": 38,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 66.95,
+        "issue-intelligence-platform-worker-2": 276.2,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 190.9,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.15,
+        "issue-intelligence-platform-db-1": 33.13,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.16
+      }
+    },
+    {
+      "seconds": 18.81,
+      "ready": 0,
+      "unacked": 202,
+      "ack_count": 56,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 66.95,
+        "issue-intelligence-platform-worker-2": 276.1,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.3,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.15,
+        "issue-intelligence-platform-db-1": 33.57,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.16
+      }
+    },
+    {
+      "seconds": 22.91,
+      "ready": 0,
+      "unacked": 182,
+      "ack_count": 76,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 66.98,
+        "issue-intelligence-platform-worker-2": 276.0,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.4,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 32.88,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 218.4,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.16
+      }
+    },
+    {
+      "seconds": 27.0,
+      "ready": 0,
+      "unacked": 182,
+      "ack_count": 76,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 66.98,
+        "issue-intelligence-platform-worker-2": 276.4,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.4,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 32.89,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 31.13,
+      "ready": 0,
+      "unacked": 162,
+      "ack_count": 96,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 67.31,
+        "issue-intelligence-platform-worker-2": 276.8,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.7,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 33.13,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 35.31,
+      "ready": 0,
+      "unacked": 142,
+      "ack_count": 116,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 67.02,
+        "issue-intelligence-platform-worker-2": 276.7,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.4,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.17,
+        "issue-intelligence-platform-db-1": 33.12,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 39.37,
+      "ready": 0,
+      "unacked": 122,
+      "ack_count": 136,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 67.02,
+        "issue-intelligence-platform-worker-2": 276.5,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 187.0,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.17,
+        "issue-intelligence-platform-db-1": 32.91,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 43.51,
+      "ready": 0,
+      "unacked": 102,
+      "ack_count": 156,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 67.04,
+        "issue-intelligence-platform-worker-2": 276.7,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.4,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.17,
+        "issue-intelligence-platform-db-1": 33.12,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 217.4,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 47.56,
+      "ready": 0,
+      "unacked": 102,
+      "ack_count": 156,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 67.04,
+        "issue-intelligence-platform-worker-2": 276.8,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.6,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 33.37,
+        "issue-intelligence-platform-mlflow-db-1": 35.31,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.16
+      }
+    },
+    {
+      "seconds": 51.16,
+      "ready": 0,
+      "unacked": 82,
+      "ack_count": 176,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 67.2,
+        "issue-intelligence-platform-worker-2": 276.9,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.7,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.16,
+        "issue-intelligence-platform-db-1": 32.93,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 217.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.16
+      }
+    },
+    {
+      "seconds": 55.33,
+      "ready": 0,
+      "unacked": 62,
+      "ack_count": 196,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 67.07,
+        "issue-intelligence-platform-worker-2": 277.0,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.8,
+        "issue-intelligence-platform-rabbitmq-1": 109.5,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.64,
+        "issue-intelligence-platform-db-1": 32.94,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 217.1,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.19
+      }
+    },
+    {
+      "seconds": 59.44,
+      "ready": 0,
+      "unacked": 42,
+      "ack_count": 216,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 67.07,
+        "issue-intelligence-platform-worker-2": 286.9,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.7,
+        "issue-intelligence-platform-rabbitmq-1": 109.5,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.4,
+        "issue-intelligence-platform-db-1": 33.03,
+        "issue-intelligence-platform-mlflow-db-1": 35.32,
+        "rustfs-server": 216.6,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    },
+    {
+      "seconds": 63.49,
+      "ready": 0,
+      "unacked": 22,
+      "ack_count": 236,
+      "memory_mib": {
+        "issue-intelligence-platform-app-1": 67.11,
+        "issue-intelligence-platform-worker-2": 277.2,
+        "issue-intelligence-platform-mlflow-1": 2378.75,
+        "issue-intelligence-platform-minio-1": 148.5,
+        "issue-intelligence-platform-rabbitmq-1": 109.5,
+        "avtokontrol-production-v12-web-1": 60.56,
+        "avtokontrol-production-v12-postgres-1": 37.17,
+        "issue-intelligence-platform-db-1": 32.97,
+        "issue-intelligence-platform-mlflow-db-1": 35.3,
+        "rustfs-server": 217.4,
+        "gonature2-ecommerce-dalex-ai-postgres-1": 43.15
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.468118+00:00",
+      "count": 1,
+      "seconds": 2.8469345569610596
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.484555+00:00",
+      "count": 2,
+      "seconds": 2.8632638454437256
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.508830+00:00",
+      "count": 3,
+      "seconds": 2.8891708850860596
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.529102+00:00",
+      "count": 4,
+      "seconds": 2.908262252807617
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.547095+00:00",
+      "count": 5,
+      "seconds": 2.9254841804504395
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.565103+00:00",
+      "count": 6,
+      "seconds": 2.945230722427368
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.585046+00:00",
+      "count": 7,
+      "seconds": 2.964769124984741
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.603488+00:00",
+      "count": 8,
+      "seconds": 2.9833037853240967
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.620575+00:00",
+      "count": 9,
+      "seconds": 3.000732660293579
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.636655+00:00",
+      "count": 10,
+      "seconds": 3.0164692401885986
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.658096+00:00",
+      "count": 11,
+      "seconds": 3.0380828380584717
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.672828+00:00",
+      "count": 12,
+      "seconds": 3.052586078643799
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.686677+00:00",
+      "count": 13,
+      "seconds": 3.066450595855713
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.700674+00:00",
+      "count": 14,
+      "seconds": 3.080960750579834
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.716313+00:00",
+      "count": 15,
+      "seconds": 3.0963573455810547
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.733229+00:00",
+      "count": 16,
+      "seconds": 3.1133689880371094
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.746973+00:00",
+      "count": 17,
+      "seconds": 3.1273653507232666
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.762238+00:00",
+      "count": 18,
+      "seconds": 3.1424193382263184
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.777398+00:00",
+      "count": 19,
+      "seconds": 3.1579761505126953
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.793394+00:00",
+      "count": 20,
+      "seconds": 3.1734659671783447
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.809835+00:00",
+      "count": 21,
+      "seconds": 3.190157413482666
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.823588+00:00",
+      "count": 22,
+      "seconds": 3.2041194438934326
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.839111+00:00",
+      "count": 23,
+      "seconds": 3.219756841659546
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.854685+00:00",
+      "count": 24,
+      "seconds": 3.2356314659118652
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.868550+00:00",
+      "count": 25,
+      "seconds": 3.249629020690918
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.882189+00:00",
+      "count": 26,
+      "seconds": 3.2636516094207764
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.901651+00:00",
+      "count": 27,
+      "seconds": 3.2831647396087646
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.919851+00:00",
+      "count": 28,
+      "seconds": 3.301029920578003
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.936804+00:00",
+      "count": 29,
+      "seconds": 3.318732738494873
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.952803+00:00",
+      "count": 30,
+      "seconds": 3.334479808807373
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.966913+00:00",
+      "count": 31,
+      "seconds": 3.348609685897827
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.982244+00:00",
+      "count": 32,
+      "seconds": 3.363778829574585
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:26.996287+00:00",
+      "count": 33,
+      "seconds": 3.377432107925415
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.011416+00:00",
+      "count": 34,
+      "seconds": 3.392894983291626
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.026706+00:00",
+      "count": 35,
+      "seconds": 3.4083333015441895
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.041430+00:00",
+      "count": 36,
+      "seconds": 3.4234442710876465
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.054924+00:00",
+      "count": 37,
+      "seconds": 3.4368808269500732
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.069222+00:00",
+      "count": 38,
+      "seconds": 3.451367139816284
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.084327+00:00",
+      "count": 39,
+      "seconds": 3.4664249420166016
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.098125+00:00",
+      "count": 40,
+      "seconds": 3.480165719985962
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.110604+00:00",
+      "count": 41,
+      "seconds": 3.492734670639038
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.125544+00:00",
+      "count": 42,
+      "seconds": 3.507810354232788
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.139778+00:00",
+      "count": 43,
+      "seconds": 3.5219295024871826
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.154648+00:00",
+      "count": 44,
+      "seconds": 3.5363752841949463
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.169326+00:00",
+      "count": 45,
+      "seconds": 3.5519111156463623
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.183559+00:00",
+      "count": 46,
+      "seconds": 3.5660674571990967
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.198099+00:00",
+      "count": 47,
+      "seconds": 3.5806233882904053
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.212325+00:00",
+      "count": 48,
+      "seconds": 3.5950927734375
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.226041+00:00",
+      "count": 49,
+      "seconds": 3.609060287475586
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.239348+00:00",
+      "count": 50,
+      "seconds": 3.622012138366699
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.254353+00:00",
+      "count": 51,
+      "seconds": 3.637559652328491
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.276087+00:00",
+      "count": 52,
+      "seconds": 3.6605355739593506
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.296177+00:00",
+      "count": 53,
+      "seconds": 3.6795156002044678
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.321744+00:00",
+      "count": 54,
+      "seconds": 3.7051026821136475
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.340313+00:00",
+      "count": 55,
+      "seconds": 3.7238080501556396
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.354027+00:00",
+      "count": 56,
+      "seconds": 3.737271785736084
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.368061+00:00",
+      "count": 57,
+      "seconds": 3.75152587890625
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.381746+00:00",
+      "count": 58,
+      "seconds": 3.765481948852539
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.394086+00:00",
+      "count": 59,
+      "seconds": 3.777381420135498
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.407366+00:00",
+      "count": 60,
+      "seconds": 3.7913269996643066
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.422286+00:00",
+      "count": 61,
+      "seconds": 3.805624008178711
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.436383+00:00",
+      "count": 62,
+      "seconds": 3.8202450275421143
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.451251+00:00",
+      "count": 63,
+      "seconds": 3.8352980613708496
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.468033+00:00",
+      "count": 64,
+      "seconds": 3.8520491123199463
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.484202+00:00",
+      "count": 65,
+      "seconds": 3.8686163425445557
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.498453+00:00",
+      "count": 66,
+      "seconds": 3.8830549716949463
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.512946+00:00",
+      "count": 67,
+      "seconds": 3.897353172302246
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.527908+00:00",
+      "count": 68,
+      "seconds": 3.9121110439300537
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.544631+00:00",
+      "count": 69,
+      "seconds": 3.928988456726074
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.560394+00:00",
+      "count": 70,
+      "seconds": 3.944650650024414
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.575399+00:00",
+      "count": 71,
+      "seconds": 3.9600090980529785
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.590047+00:00",
+      "count": 72,
+      "seconds": 3.9749960899353027
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.607760+00:00",
+      "count": 73,
+      "seconds": 3.9924559593200684
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.621891+00:00",
+      "count": 74,
+      "seconds": 4.006950855255127
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.638210+00:00",
+      "count": 75,
+      "seconds": 4.023084402084351
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.653789+00:00",
+      "count": 76,
+      "seconds": 4.038734436035156
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.672164+00:00",
+      "count": 77,
+      "seconds": 4.057395935058594
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.689081+00:00",
+      "count": 78,
+      "seconds": 4.0750720500946045
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.705893+00:00",
+      "count": 79,
+      "seconds": 4.091317892074585
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.721914+00:00",
+      "count": 80,
+      "seconds": 4.107483386993408
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.738127+00:00",
+      "count": 81,
+      "seconds": 4.12355637550354
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.752277+00:00",
+      "count": 82,
+      "seconds": 4.137845277786255
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.765242+00:00",
+      "count": 83,
+      "seconds": 4.151201486587524
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.780569+00:00",
+      "count": 84,
+      "seconds": 4.166221618652344
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.797770+00:00",
+      "count": 85,
+      "seconds": 4.183908224105835
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.812296+00:00",
+      "count": 86,
+      "seconds": 4.1987669467926025
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.827817+00:00",
+      "count": 87,
+      "seconds": 4.21366810798645
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.841799+00:00",
+      "count": 88,
+      "seconds": 4.2273712158203125
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.860351+00:00",
+      "count": 89,
+      "seconds": 4.246199131011963
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.876688+00:00",
+      "count": 90,
+      "seconds": 4.263128280639648
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.891985+00:00",
+      "count": 91,
+      "seconds": 4.278510093688965
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.910467+00:00",
+      "count": 92,
+      "seconds": 4.297001123428345
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.925133+00:00",
+      "count": 93,
+      "seconds": 4.311516284942627
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.938803+00:00",
+      "count": 94,
+      "seconds": 4.325639486312866
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.953446+00:00",
+      "count": 95,
+      "seconds": 4.340145826339722
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.968183+00:00",
+      "count": 96,
+      "seconds": 4.355172157287598
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.982279+00:00",
+      "count": 97,
+      "seconds": 4.36876368522644
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:27.996231+00:00",
+      "count": 98,
+      "seconds": 4.382861852645874
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.010957+00:00",
+      "count": 99,
+      "seconds": 4.397865533828735
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.026480+00:00",
+      "count": 100,
+      "seconds": 4.413467645645142
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.042809+00:00",
+      "count": 101,
+      "seconds": 4.430341005325317
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.057892+00:00",
+      "count": 102,
+      "seconds": 4.444815397262573
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.078551+00:00",
+      "count": 103,
+      "seconds": 4.465869426727295
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.094296+00:00",
+      "count": 104,
+      "seconds": 4.4824442863464355
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.113324+00:00",
+      "count": 105,
+      "seconds": 4.500971555709839
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.131992+00:00",
+      "count": 106,
+      "seconds": 4.520081281661987
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.152386+00:00",
+      "count": 107,
+      "seconds": 4.5404603481292725
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.167277+00:00",
+      "count": 108,
+      "seconds": 4.5547730922698975
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.182491+00:00",
+      "count": 109,
+      "seconds": 4.570260763168335
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.197738+00:00",
+      "count": 110,
+      "seconds": 4.585301876068115
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.213831+00:00",
+      "count": 111,
+      "seconds": 4.602020978927612
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.230617+00:00",
+      "count": 112,
+      "seconds": 4.621005058288574
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.248729+00:00",
+      "count": 113,
+      "seconds": 4.637126445770264
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.264605+00:00",
+      "count": 114,
+      "seconds": 4.6528239250183105
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.281151+00:00",
+      "count": 115,
+      "seconds": 4.669689893722534
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.298324+00:00",
+      "count": 116,
+      "seconds": 4.687041997909546
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.313057+00:00",
+      "count": 117,
+      "seconds": 4.701592206954956
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.327868+00:00",
+      "count": 118,
+      "seconds": 4.716092824935913
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.342419+00:00",
+      "count": 119,
+      "seconds": 4.730734825134277
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.356859+00:00",
+      "count": 120,
+      "seconds": 4.745525360107422
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.369905+00:00",
+      "count": 121,
+      "seconds": 4.759108543395996
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.384409+00:00",
+      "count": 122,
+      "seconds": 4.773564100265503
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.397397+00:00",
+      "count": 123,
+      "seconds": 4.78625750541687
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.411180+00:00",
+      "count": 124,
+      "seconds": 4.800306081771851
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.424883+00:00",
+      "count": 125,
+      "seconds": 4.813956260681152
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.438506+00:00",
+      "count": 126,
+      "seconds": 4.8277928829193115
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.454629+00:00",
+      "count": 127,
+      "seconds": 4.843907356262207
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.473274+00:00",
+      "count": 128,
+      "seconds": 4.863586664199829
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.489478+00:00",
+      "count": 129,
+      "seconds": 4.878921985626221
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.501794+00:00",
+      "count": 130,
+      "seconds": 4.891556262969971
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.514703+00:00",
+      "count": 131,
+      "seconds": 4.904317855834961
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.531317+00:00",
+      "count": 132,
+      "seconds": 4.920915603637695
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.545318+00:00",
+      "count": 133,
+      "seconds": 4.935218334197998
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.559503+00:00",
+      "count": 134,
+      "seconds": 4.949384450912476
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.573355+00:00",
+      "count": 135,
+      "seconds": 4.963330268859863
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.590582+00:00",
+      "count": 136,
+      "seconds": 4.981160402297974
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.604733+00:00",
+      "count": 137,
+      "seconds": 4.995121479034424
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.619459+00:00",
+      "count": 138,
+      "seconds": 5.009994745254517
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.632080+00:00",
+      "count": 139,
+      "seconds": 5.022889852523804
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.647210+00:00",
+      "count": 140,
+      "seconds": 5.0372185707092285
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.669465+00:00",
+      "count": 141,
+      "seconds": 5.059945821762085
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.681165+00:00",
+      "count": 142,
+      "seconds": 5.071781873703003
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.693618+00:00",
+      "count": 143,
+      "seconds": 5.084546089172363
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.707159+00:00",
+      "count": 144,
+      "seconds": 5.097576141357422
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.719815+00:00",
+      "count": 145,
+      "seconds": 5.110461235046387
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.730884+00:00",
+      "count": 146,
+      "seconds": 5.121609687805176
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.741937+00:00",
+      "count": 147,
+      "seconds": 5.132906198501587
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.752911+00:00",
+      "count": 148,
+      "seconds": 5.14417576789856
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.763824+00:00",
+      "count": 149,
+      "seconds": 5.155009031295776
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.774472+00:00",
+      "count": 150,
+      "seconds": 5.16584587097168
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.785265+00:00",
+      "count": 151,
+      "seconds": 5.176592588424683
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.798236+00:00",
+      "count": 152,
+      "seconds": 5.191980600357056
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.815051+00:00",
+      "count": 153,
+      "seconds": 5.207239627838135
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.829038+00:00",
+      "count": 154,
+      "seconds": 5.221226453781128
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.843022+00:00",
+      "count": 155,
+      "seconds": 5.234546899795532
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.855546+00:00",
+      "count": 156,
+      "seconds": 5.247154951095581
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.866620+00:00",
+      "count": 157,
+      "seconds": 5.258273363113403
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.881137+00:00",
+      "count": 158,
+      "seconds": 5.2728800773620605
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.892518+00:00",
+      "count": 159,
+      "seconds": 5.284256219863892
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.904028+00:00",
+      "count": 160,
+      "seconds": 5.295771598815918
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.914175+00:00",
+      "count": 161,
+      "seconds": 5.305990695953369
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.925680+00:00",
+      "count": 162,
+      "seconds": 5.317671775817871
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.938042+00:00",
+      "count": 163,
+      "seconds": 5.330190658569336
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.948311+00:00",
+      "count": 164,
+      "seconds": 5.340391397476196
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.960082+00:00",
+      "count": 165,
+      "seconds": 5.352181434631348
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.971283+00:00",
+      "count": 166,
+      "seconds": 5.36355996131897
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.981961+00:00",
+      "count": 167,
+      "seconds": 5.374282360076904
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:28.992278+00:00",
+      "count": 168,
+      "seconds": 5.384536027908325
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.002659+00:00",
+      "count": 169,
+      "seconds": 5.395028114318848
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.014243+00:00",
+      "count": 170,
+      "seconds": 5.4063098430633545
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.025354+00:00",
+      "count": 171,
+      "seconds": 5.417565584182739
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.035942+00:00",
+      "count": 172,
+      "seconds": 5.428200721740723
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.046044+00:00",
+      "count": 173,
+      "seconds": 5.43866491317749
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.056110+00:00",
+      "count": 174,
+      "seconds": 5.448817729949951
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.066493+00:00",
+      "count": 175,
+      "seconds": 5.458897113800049
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.076450+00:00",
+      "count": 176,
+      "seconds": 5.469228029251099
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.088170+00:00",
+      "count": 177,
+      "seconds": 5.482248067855835
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.108469+00:00",
+      "count": 178,
+      "seconds": 5.502497911453247
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.123839+00:00",
+      "count": 179,
+      "seconds": 5.517655372619629
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.136910+00:00",
+      "count": 180,
+      "seconds": 5.52921462059021
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.147947+00:00",
+      "count": 181,
+      "seconds": 5.541061878204346
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.158962+00:00",
+      "count": 182,
+      "seconds": 5.55242657661438
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.171187+00:00",
+      "count": 183,
+      "seconds": 5.564683198928833
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.183475+00:00",
+      "count": 184,
+      "seconds": 5.576946020126343
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.195339+00:00",
+      "count": 185,
+      "seconds": 5.588823080062866
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.207489+00:00",
+      "count": 186,
+      "seconds": 5.601894855499268
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.219130+00:00",
+      "count": 187,
+      "seconds": 5.613820314407349
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.231782+00:00",
+      "count": 188,
+      "seconds": 5.625703811645508
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.242772+00:00",
+      "count": 189,
+      "seconds": 5.636654853820801
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.253933+00:00",
+      "count": 190,
+      "seconds": 5.647479772567749
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.264096+00:00",
+      "count": 191,
+      "seconds": 5.658203125
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.274961+00:00",
+      "count": 192,
+      "seconds": 5.668974161148071
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.286001+00:00",
+      "count": 193,
+      "seconds": 5.680107116699219
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.297427+00:00",
+      "count": 194,
+      "seconds": 5.691579341888428
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.307876+00:00",
+      "count": 195,
+      "seconds": 5.7019548416137695
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.318790+00:00",
+      "count": 196,
+      "seconds": 5.712855339050293
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.330574+00:00",
+      "count": 197,
+      "seconds": 5.724313497543335
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.341335+00:00",
+      "count": 198,
+      "seconds": 5.735875129699707
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.351848+00:00",
+      "count": 199,
+      "seconds": 5.746344089508057
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.362392+00:00",
+      "count": 200,
+      "seconds": 5.7566163539886475
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.373135+00:00",
+      "count": 201,
+      "seconds": 5.76806640625
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.385171+00:00",
+      "count": 202,
+      "seconds": 5.779794692993164
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.402978+00:00",
+      "count": 203,
+      "seconds": 5.799182415008545
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.441564+00:00",
+      "count": 204,
+      "seconds": 5.837504625320435
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.469178+00:00",
+      "count": 205,
+      "seconds": 5.864642143249512
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.497491+00:00",
+      "count": 206,
+      "seconds": 5.894949436187744
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.519997+00:00",
+      "count": 207,
+      "seconds": 5.916794300079346
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.541494+00:00",
+      "count": 208,
+      "seconds": 5.937312364578247
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.561731+00:00",
+      "count": 209,
+      "seconds": 5.958555221557617
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.580046+00:00",
+      "count": 210,
+      "seconds": 5.975956439971924
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.598426+00:00",
+      "count": 211,
+      "seconds": 5.994571208953857
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.625476+00:00",
+      "count": 212,
+      "seconds": 6.021669864654541
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.641825+00:00",
+      "count": 213,
+      "seconds": 6.037939786911011
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.656499+00:00",
+      "count": 214,
+      "seconds": 6.052517890930176
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.669743+00:00",
+      "count": 215,
+      "seconds": 6.065800189971924
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.682236+00:00",
+      "count": 216,
+      "seconds": 6.078442811965942
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.693979+00:00",
+      "count": 217,
+      "seconds": 6.090389966964722
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.705167+00:00",
+      "count": 218,
+      "seconds": 6.100542783737183
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.716212+00:00",
+      "count": 219,
+      "seconds": 6.11274790763855
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.726531+00:00",
+      "count": 220,
+      "seconds": 6.122931957244873
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.737624+00:00",
+      "count": 221,
+      "seconds": 6.134158611297607
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.748165+00:00",
+      "count": 222,
+      "seconds": 6.144497394561768
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.758303+00:00",
+      "count": 223,
+      "seconds": 6.154785871505737
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.768929+00:00",
+      "count": 224,
+      "seconds": 6.165679931640625
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.780450+00:00",
+      "count": 225,
+      "seconds": 6.177364110946655
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.791629+00:00",
+      "count": 226,
+      "seconds": 6.188194751739502
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.803705+00:00",
+      "count": 227,
+      "seconds": 6.200708627700806
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.821445+00:00",
+      "count": 228,
+      "seconds": 6.219208240509033
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.837416+00:00",
+      "count": 229,
+      "seconds": 6.2352635860443115
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.851871+00:00",
+      "count": 230,
+      "seconds": 6.249054670333862
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.863263+00:00",
+      "count": 231,
+      "seconds": 6.260735511779785
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.883281+00:00",
+      "count": 232,
+      "seconds": 6.2805540561676025
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.895992+00:00",
+      "count": 233,
+      "seconds": 6.293642044067383
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.910487+00:00",
+      "count": 234,
+      "seconds": 6.308112144470215
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.922922+00:00",
+      "count": 235,
+      "seconds": 6.320553541183472
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.934800+00:00",
+      "count": 236,
+      "seconds": 6.332549333572388
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.945469+00:00",
+      "count": 237,
+      "seconds": 6.343352794647217
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.956323+00:00",
+      "count": 238,
+      "seconds": 6.354110240936279
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.966489+00:00",
+      "count": 239,
+      "seconds": 6.364241123199463
+    },
+    {
+      "event": "publish_confirm",
+      "timestamp": "2026-10-20T19:43:29.978349+00:00",
+      "count": 240,
+      "seconds": 6.37652587890625
+    }
+  ],
+  "latencies_seconds": [
+    [
+      0.5039816680000513,
+      46.852323
+    ],
+    [
+      0.506997665000199,
+      48.291325
+    ],
+    [
+      0.5052770939992115,
+      49.654083
+    ],
+    [
+      0.5033395309992557,
+      53.941805
+    ],
+    [
+      0.505876394000552,
+      55.375707
+    ],
+    [
+      0.5025398529996892,
+      11.046058
+    ],
+    [
+      0.5039282190000449,
+      56.323795
+    ],
+    [
+      0.508177185999557,
+      1.549939
+    ],
+    [
+      0.5057428949994573,
+      2.021989
+    ],
+    [
+      0.5071269330001087,
+      2.018421
+    ],
+    [
+      0.5075053230002595,
+      2.49693
+    ],
+    [
+      0.5066894179999508,
+      2.493395
+    ],
+    [
+      0.508027783000216,
+      2.978896
+    ],
+    [
+      0.506406362999769,
+      2.963347
+    ],
+    [
+      0.5034167439998782,
+      3.435585
+    ],
+    [
+      0.502987634999954,
+      3.43321
+    ],
+    [
+      0.5060475500004031,
+      3.914673
+    ],
+    [
+      0.506898834999447,
+      3.912594
+    ],
+    [
+      0.506583249999494,
+      4.390061
+    ],
+    [
+      0.5083285049995538,
+      4.393217
+    ],
+    [
+      0.504341537000073,
+      4.862502
+    ],
+    [
+      0.5043144199999006,
+      4.862303
+    ],
+    [
+      0.5035059980000369,
+      5.336397
+    ],
+    [
+      0.5046912420002627,
+      5.809408
+    ],
+    [
+      0.5053799480001544,
+      6.760449
+    ],
+    [
+      0.5045440829999279,
+      6.756496
+    ],
+    [
+      0.5036639079999077,
+      7.228658
+    ],
+    [
+      0.5038433460003944,
+      7.699725
+    ],
+    [
+      0.5026758960002553,
+      7.691774
+    ],
+    [
+      0.5045814739996786,
+      8.17635
+    ],
+    [
+      0.5033206360003533,
+      8.649888
+    ],
+    [
+      0.5043674019998434,
+      8.642275
+    ],
+    [
+      0.5044419309997465,
+      9.128048
+    ],
+    [
+      0.5035079279996353,
+      9.11787
+    ],
+    [
+      0.503794471999754,
+      9.590961
+    ],
+    [
+      0.5043188990002818,
+      10.076487
+    ],
+    [
+      0.5049295979997623,
+      10.571387
+    ],
+    [
+      0.5026603020005496,
+      10.55899
+    ],
+    [
+      0.5924342620000971,
+      0.707488
+    ],
+    [
+      0.5052667850004582,
+      1.08142
+    ],
+    [
+      0.504891329000202,
+      16.77072
+    ],
+    [
+      0.5033670079992589,
+      17.227201
+    ],
+    [
+      0.5038600550005867,
+      17.241862
+    ],
+    [
+      0.5037935509999443,
+      17.715187
+    ],
+    [
+      0.5042966890005118,
+      18.190125
+    ],
+    [
+      0.5056125410001187,
+      18.17527
+    ],
+    [
+      0.5034346969996477,
+      18.660439
+    ],
+    [
+      0.5037874099998589,
+      18.64323
+    ],
+    [
+      0.5046944829991844,
+      19.128803
+    ],
+    [
+      0.5037132990000828,
+      19.600677
+    ],
+    [
+      0.5040439719996357,
+      19.585561
+    ],
+    [
+      0.5045352719998846,
+      20.075333
+    ],
+    [
+      0.5045953609997014,
+      20.551013
+    ],
+    [
+      0.5050720649996947,
+      20.534784
+    ],
+    [
+      0.5042917849996229,
+      21.009903
+    ],
+    [
+      0.5072065229996952,
+      21.025394
+    ],
+    [
+      0.5050687639995886,
+      21.503844
+    ],
+    [
+      0.5035059789997831,
+      21.972051
+    ],
+    [
+      0.503468757000519,
+      21.954501
+    ],
+    [
+      0.5039724449998175,
+      22.444689
+    ],
+    [
+      0.5049032639999496,
+      10.026559
+    ],
+    [
+      0.5031126910007515,
+      11.016215
+    ],
+    [
+      0.5034665009998207,
+      11.556314
+    ],
+    [
+      0.5036982120000175,
+      11.460938
+    ],
+    [
+      0.5048320289997719,
+      12.004124
+    ],
+    [
+      0.5027890620003745,
+      12.018102
+    ],
+    [
+      0.5053767640001752,
+      12.552105
+    ],
+    [
+      0.5073416969999016,
+      12.538939
+    ],
+    [
+      0.5037910809996902,
+      12.95615
+    ],
+    [
+      0.5043210439998802,
+      12.932467
+    ],
+    [
+      0.5039840869994805,
+      13.393113
+    ],
+    [
+      0.504883542999778,
+      13.421541
+    ],
+    [
+      0.5043768390005425,
+      14.010573
+    ],
+    [
+      0.5046635899998364,
+      13.912
+    ],
+    [
+      0.5046048849999352,
+      14.362093
+    ],
+    [
+      0.5044044539999959,
+      14.348649
+    ],
+    [
+      0.5040089119993354,
+      14.837185
+    ],
+    [
+      0.5036526290004986,
+      14.892589
+    ],
+    [
+      0.5050036510001519,
+      15.385906
+    ],
+    [
+      0.5039262129994313,
+      15.328977
+    ],
+    [
+      0.5054355229995053,
+      15.816737
+    ],
+    [
+      0.5077193679999255,
+      15.801604
+    ],
+    [
+      0.5072795630003384,
+      16.294238
+    ],
+    [
+      0.5928971149996869,
+      0.704206
+    ],
+    [
+      0.5049319260006087,
+      1.099681
+    ],
+    [
+      0.5047244190000129,
+      1.554975
+    ],
+    [
+      0.5056334079999942,
+      22.430773
+    ],
+    [
+      0.5071691670000291,
+      22.910162
+    ],
+    [
+      0.5039609429995835,
+      23.396711
+    ],
+    [
+      0.5042128329996558,
+      23.871816
+    ],
+    [
+      0.5033669629992801,
+      23.863296
+    ],
+    [
+      0.5042194419993393,
+      24.346226
+    ],
+    [
+      0.5036731770005645,
+      24.330837
+    ],
+    [
+      0.5033916849997695,
+      24.821143
+    ],
+    [
+      0.5054009710001992,
+      25.286477
+    ],
+    [
+      0.5037393029997475,
+      25.270058
+    ],
+    [
+      0.5032589449992884,
+      25.752388
+    ],
+    [
+      0.5026665069999581,
+      25.734737
+    ],
+    [
+      0.5048841560001165,
+      26.223439
+    ],
+    [
+      0.5043244650005363,
+      26.697815
+    ],
+    [
+      0.5045787199996994,
+      26.683465
+    ],
+    [
+      0.5034954410002683,
+      27.163493
+    ],
+    [
+      0.5034926970001834,
+      27.150882
+    ],
+    [
+      0.504882555000222,
+      27.640725
+    ],
+    [
+      0.5044723009996233,
+      28.108348
+    ],
+    [
+      0.5044598320000659,
+      28.094825
+    ],
+    [
+      0.5045922290000817,
+      28.584353
+    ],
+    [
+      0.5051599749995148,
+      28.571062
+    ],
+    [
+      0.5033942279997063,
+      29.05996
+    ],
+    [
+      0.5041784149998421,
+      29.537071
+    ],
+    [
+      0.5043894310001633,
+      30.015412
+    ],
+    [
+      0.5056773050000629,
+      30.002279
+    ],
+    [
+      0.5046649480000269,
+      30.476151
+    ],
+    [
+      0.5038967459995547,
+      30.492981
+    ],
+    [
+      0.5085577970003214,
+      30.965034
+    ],
+    [
+      0.5035943270004282,
+      31.440492
+    ],
+    [
+      0.5049944660004257,
+      31.428098
+    ],
+    [
+      0.5033478329996797,
+      31.914375
+    ],
+    [
+      0.5037199839998721,
+      32.391643
+    ],
+    [
+      0.5043745010007115,
+      32.375582
+    ],
+    [
+      0.5038986359995761,
+      32.864396
+    ],
+    [
+      0.5037683400005335,
+      32.849686
+    ],
+    [
+      0.504391248000502,
+      33.342013
+    ],
+    [
+      0.5034260349993929,
+      33.816646
+    ],
+    [
+      0.5033281209998677,
+      33.795384
+    ],
+    [
+      0.5040574570002718,
+      34.289204
+    ],
+    [
+      0.5040489040002285,
+      34.275703
+    ],
+    [
+      0.5028618680007639,
+      34.75262
+    ],
+    [
+      0.5034363340000709,
+      35.245127
+    ],
+    [
+      0.5043432889997348,
+      35.234302
+    ],
+    [
+      0.5039741420005157,
+      35.727517
+    ],
+    [
+      0.5037087840000822,
+      36.20824
+    ],
+    [
+      0.5035523930000636,
+      36.685964
+    ],
+    [
+      0.5043175669998163,
+      37.165998
+    ],
+    [
+      0.5074170509997202,
+      37.153661
+    ],
+    [
+      0.50372524300019,
+      37.645684
+    ],
+    [
+      0.504482747000111,
+      37.634718
+    ],
+    [
+      0.5033768379998946,
+      38.123384
+    ],
+    [
+      0.5042427839998709,
+      38.606316
+    ],
+    [
+      0.5050185740001325,
+      38.596481
+    ],
+    [
+      0.5039654590000282,
+      39.088879
+    ],
+    [
+      0.5047041749994605,
+      39.077412
+    ],
+    [
+      0.5040224760005003,
+      39.572274
+    ],
+    [
+      0.5057223750000048,
+      40.10445
+    ],
+    [
+      0.5062793220004096,
+      40.094046
+    ],
+    [
+      0.5035937769998782,
+      40.590366
+    ],
+    [
+      0.504396080999868,
+      41.071928
+    ],
+    [
+      0.503769445999751,
+      41.061899
+    ],
+    [
+      0.5042555400004858,
+      41.554126
+    ],
+    [
+      0.5034439920000295,
+      41.54476
+    ],
+    [
+      0.5038321669999277,
+      42.036441
+    ],
+    [
+      0.5049474650004413,
+      42.521457
+    ],
+    [
+      0.5052139389999866,
+      42.506158
+    ],
+    [
+      0.5052135050000288,
+      42.994824
+    ],
+    [
+      0.5073979680000775,
+      42.98058
+    ],
+    [
+      0.5051733270001932,
+      43.474907
+    ],
+    [
+      0.503780237000683,
+      45.883902
+    ],
+    [
+      0.5042664009997679,
+      45.874035
+    ],
+    [
+      0.5049441190003563,
+      46.371228
+    ],
+    [
+      0.506736262999766,
+      46.360772
+    ],
+    [
+      0.5057768729993768,
+      46.841474
+    ],
+    [
+      0.5034399529995426,
+      47.33398
+    ],
+    [
+      0.5038162210003065,
+      47.322981
+    ],
+    [
+      0.5061087429994586,
+      47.815979
+    ],
+    [
+      0.5044778829997085,
+      47.80602
+    ],
+    [
+      0.5049074629996539,
+      48.301889
+    ],
+    [
+      0.5032783489996291,
+      48.782927
+    ],
+    [
+      0.5036437550006667,
+      48.762007
+    ],
+    [
+      0.5047720800002935,
+      49.226802
+    ],
+    [
+      0.5044284890000199,
+      49.19979
+    ],
+    [
+      0.5040322459999516,
+      49.674277
+    ],
+    [
+      0.5039032559998304,
+      50.138775
+    ],
+    [
+      0.5037697589996242,
+      50.119042
+    ],
+    [
+      0.5049954769992837,
+      50.608536
+    ],
+    [
+      0.5083568939999168,
+      50.59013
+    ],
+    [
+      0.5060230879998926,
+      43.464159
+    ],
+    [
+      0.5040673319999769,
+      43.958079
+    ],
+    [
+      0.5050811900000554,
+      44.439014
+    ],
+    [
+      0.5040034550002019,
+      44.918553
+    ],
+    [
+      0.5045494380001401,
+      44.906192
+    ],
+    [
+      0.5036246620002203,
+      45.399728
+    ],
+    [
+      0.504837354999836,
+      51.070667
+    ],
+    [
+      0.505531339999834,
+      51.05538
+    ],
+    [
+      0.5040347009999095,
+      51.54512
+    ],
+    [
+      0.5036232519996702,
+      51.53218
+    ],
+    [
+      0.5042572999991535,
+      52.025082
+    ],
+    [
+      0.5050640549998207,
+      52.014199
+    ],
+    [
+      0.5038742189999539,
+      52.506207
+    ],
+    [
+      0.5035090479996143,
+      52.495789
+    ],
+    [
+      0.5032089400001496,
+      52.987664
+    ],
+    [
+      0.5031950720003806,
+      52.977294
+    ],
+    [
+      0.5036318430002211,
+      53.470666
+    ],
+    [
+      0.5042553260000204,
+      53.460737
+    ],
+    [
+      0.5049398270002712,
+      53.952839
+    ],
+    [
+      0.5052720139992743,
+      54.43518
+    ],
+    [
+      0.5061235779994604,
+      54.424182
+    ],
+    [
+      0.5033259109995925,
+      54.908523
+    ],
+    [
+      0.5040978110000651,
+      54.893928
+    ],
+    [
+      0.5048027459997684,
+      55.387491
+    ],
+    [
+      0.5034872779997386,
+      55.851324
+    ],
+    [
+      0.5036531129999275,
+      55.844063
+    ],
+    [
+      0.5044307329999356,
+      56.333492
+    ],
+    [
+      0.5036902589999954,
+      56.813512
+    ],
+    [
+      0.5038815660000182,
+      56.805369
+    ],
+    [
+      0.503864579999572,
+      57.296809
+    ],
+    [
+      0.5034514300004957,
+      57.287896
+    ],
+    [
+      0.5026963649997924,
+      5.333988
+    ],
+    [
+      0.503682194999783,
+      5.806533
+    ],
+    [
+      0.5043286110003464,
+      8.167591
+    ],
+    [
+      0.5036307130003479,
+      9.599965
+    ],
+    [
+      0.5069035930000609,
+      16.279707
+    ],
+    [
+      0.5041331200000059,
+      17.699552
+    ],
+    [
+      0.5037399860002552,
+      20.060967
+    ],
+    [
+      0.5060504880002554,
+      24.801809
+    ],
+    [
+      0.5044084490000387,
+      26.209587
+    ],
+    [
+      0.5044792819999202,
+      29.524382
+    ],
+    [
+      0.5040777650001473,
+      30.950365
+    ],
+    [
+      0.5032767840002634,
+      31.900902
+    ],
+    [
+      0.5063584999998056,
+      33.330126
+    ],
+    [
+      0.5035078250002698,
+      34.76569
+    ],
+    [
+      0.5044884150001963,
+      36.672318
+    ],
+    [
+      0.5053223360000629,
+      39.56076
+    ],
+    [
+      0.5033895999995366,
+      42.0267
+    ],
+    [
+      0.5042017460000352,
+      43.945766
+    ],
+    [
+      0.5061835970000175,
+      44.427591
+    ],
+    [
+      0.5056279889995494,
+      6.285288
+    ],
+    [
+      0.5026963780001097,
+      7.219024
+    ],
+    [
+      0.5063886859998092,
+      16.755696
+    ],
+    [
+      0.5030407699996431,
+      19.112467
+    ],
+    [
+      0.5075889079998888,
+      21.485652
+    ],
+    [
+      0.5053988310000932,
+      22.924884
+    ],
+    [
+      0.503847955999845,
+      27.625492
+    ],
+    [
+      0.503527944999405,
+      35.717464
+    ],
+    [
+      0.5043325090000508,
+      38.112705
+    ],
+    [
+      0.505919401999563,
+      40.579913
+    ],
+    [
+      0.5053690880004069,
+      45.390353
+    ],
+    [
+      0.5034211610000057,
+      6.281739
+    ],
+    [
+      0.5038245249997999,
+      36.197534
+    ],
+    [
+      0.50417161400037,
+      23.384522
+    ],
+    [
+      0.5031412770003953,
+      29.046709
+    ]
+  ],
+  "completed_db": 240,
+  "completed": 240,
+  "rejected": 0
+}

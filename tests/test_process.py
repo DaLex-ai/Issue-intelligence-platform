@@ -80,3 +80,50 @@ async def test_api_sheds_concurrent_publish_without_db_write(client, monkeypatch
     assert response.status_code == 503
     assert response.headers["Retry-After"].isdigit()
     send.assert_not_awaited()
+
+
+async def test_whitespace_summary_422(client):
+    response = await client.post("/api/v1/tasks", json={"summary": "   "})
+    assert response.status_code == 422
+
+
+async def test_database_commit_ambiguity_exposes_task_id_for_lookup(
+    client, monkeypatch
+):
+    from asyncpg.exceptions import CannotConnectNowError
+
+    monkeypatch.setattr(
+        routes, "submit", AsyncMock(side_effect=CannotConnectNowError())
+    )
+    app.state.publisher = object()
+    response = await client.post("/api/v1/tasks", json={"summary": "Fails"})
+    assert response.status_code == 503
+    body = response.json()
+    assert response.headers["Location"] == body["status_url"]
+    assert body["task_id"] in body["status_url"]
+    assert "unknown" in body["detail"]
+
+
+async def test_status_lookup_database_failure_is_503(client, monkeypatch):
+    monkeypatch.setattr(
+        routes.store, "get", AsyncMock(side_effect=OSError("database down"))
+    )
+    response = await client.get(f"/api/v1/tasks/{uuid4()}")
+    assert response.status_code == 503
+    assert response.headers["Retry-After"].isdigit()
+
+
+async def test_admission_has_bounded_total_wait(client, monkeypatch):
+    import asyncio
+
+    async def blocked(*args):
+        await asyncio.Event().wait()
+
+    monkeypatch.setattr(routes, "submit", blocked)
+    monkeypatch.setattr(routes.settings, "api_operation_timeout_seconds", 0.01)
+    app.state.publisher = object()
+    response = await asyncio.wait_for(
+        client.post("/api/v1/tasks", json={"summary": "Fails"}), timeout=1
+    )
+    assert response.status_code == 503
+    assert "task_id" in response.json()
