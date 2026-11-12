@@ -13,6 +13,7 @@ dependencies = [
     "faststream[rabbit]==0.7.0",
     "matplotlib>=3.11.2",
     "mlflow==3.16.1",
+    "opentelemetry-exporter-otlp-proto-http==1.45.0",
     "pandas>=3.0.6",
     "pydantic-settings>=2.15.0",
     "scikit-learn>=1.9.1",

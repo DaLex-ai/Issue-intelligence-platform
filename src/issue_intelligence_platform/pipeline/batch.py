@@ -9,13 +9,14 @@ import hashlib
 import json
 import logging
 import time
-from datetime import UTC, datetime
 from pathlib import Path
 from uuid import NAMESPACE_URL, uuid5
 
 from pydantic import ValidationError
 
+from issue_intelligence_platform.core import telemetry as obs
 from issue_intelligence_platform.core.config import settings
+from issue_intelligence_platform.core.logging import configure_logging
 from issue_intelligence_platform.db.database import (
     engine,
     initialize_schema,
@@ -34,7 +35,6 @@ logger = logging.getLogger(__name__)
 
 
 async def run(path: Path) -> None:
-    await initialize_schema()
     publisher = ConfirmingPublisher()
     store = TaskStore(session_factory)
     backoff = settings.batch_backoff_min_seconds
@@ -42,6 +42,7 @@ async def run(path: Path) -> None:
     rejected = 0
     began = time.monotonic()
     try:
+        await initialize_schema()
         await publisher.start()
         # Stream source, O(max_record_bytes) RAM; never read entire file or
         # enqueue into an unbounded asyncio.Queue.
@@ -58,45 +59,54 @@ async def run(path: Path) -> None:
                 # Stable across restarts of this file at its source path.
                 digest = hashlib.sha256(line.encode("utf-8")).hexdigest()
                 task_id = uuid5(NAMESPACE_URL, f"{path.resolve()}:{index}:{digest}")
-                while True:
-                    try:
-                        accepted = await submit(
-                            store,
-                            publisher,
-                            task_id,
-                            task.summary,
-                            task.description,
-                        )
-                        if accepted:
-                            confirmed += 1
-                            print(
-                                "METRIC "
-                                + json.dumps(
-                                    {
-                                        "event": "publish_confirm",
-                                        "timestamp": datetime.now(UTC).isoformat(),
-                                        "count": confirmed,
-                                    }
-                                ),
-                                flush=True,
+                with obs.task_scope(task_id), obs.span("batch task") as current:
+                    current.set_attribute("task.id", str(task_id))
+                    while True:
+                        try:
+                            await store.expire_publications(
+                                settings.publication_timeout_seconds
                             )
-                        backoff = settings.batch_backoff_min_seconds
-                        break
-                    except (QueueFull, PublishUncertain):
-                        rejected += 1
-                        print(
-                            "METRIC "
-                            + json.dumps(
-                                {
-                                    "event": "publish_rejected",
-                                    "timestamp": datetime.now(UTC).isoformat(),
-                                    "count": rejected,
-                                }
-                            ),
-                            flush=True,
-                        )
-                        await asyncio.sleep(backoff)
-                        backoff = min(2 * backoff, settings.batch_backoff_max_seconds)
+                            accepted = await submit(
+                                store,
+                                publisher,
+                                task_id,
+                                task.summary,
+                                task.description,
+                            )
+                            if accepted:
+                                confirmed += 1
+                                obs.count("iip_source_published")
+                                logger.info(
+                                    "publish_confirm",
+                                    extra={
+                                        "event": "publish_confirm",
+                                        "count": confirmed,
+                                    },
+                                )
+                            backoff = settings.batch_backoff_min_seconds
+                            break
+                        except (QueueFull, PublishUncertain) as exc:
+                            rejected += 1
+                            if isinstance(exc, QueueFull):
+                                obs.count("iip_source_broker_rejections")
+                            with obs.span("batch backoff") as pause:
+                                pause.set_attribute("retry.delay_seconds", backoff)
+                                obs.fail(exc)
+                                logger.warning(
+                                    "batch_backoff",
+                                    extra={
+                                        "event": "publish_rejected",
+                                        "count": rejected,
+                                        "delay_seconds": backoff,
+                                        "error_type": type(exc).__name__,
+                                    },
+                                )
+                                started = time.monotonic()
+                                await asyncio.sleep(backoff)
+                                obs.wait_seconds(time.monotonic() - started)
+                            backoff = min(
+                                2 * backoff, settings.batch_backoff_max_seconds
+                            )
                 if index % 25 == 0:
                     seconds = max(time.monotonic() - began, 1e-9)
                     logger.info(
@@ -107,8 +117,12 @@ async def run(path: Path) -> None:
                         confirmed / seconds,
                     )
     finally:
-        await publisher.close()
-        await engine.dispose()
+        logger.info("graceful_shutdown_started")
+        try:
+            await publisher.close()
+        finally:
+            await engine.dispose()
+        logger.info("graceful_shutdown_completed")
     seconds = max(time.monotonic() - began, 1e-9)
     logger.info(
         "batch_done accepted=%s rejected=%s rate=%.3f/s",
@@ -119,11 +133,19 @@ async def run(path: Path) -> None:
 
 
 def main() -> None:
-    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
+    obs.setup("batch")
+    configure_logging()
     parser = argparse.ArgumentParser()
     parser.add_argument("file", type=Path)
     args = parser.parse_args()
-    asyncio.run(run(args.file))
+    try:
+        asyncio.run(run(args.file))
+    except Exception:
+        logger.exception("batch_exited")
+        raise SystemExit(1) from None
+    finally:
+        obs.flush()
+        obs.shutdown()
 
 
 if __name__ == "__main__":

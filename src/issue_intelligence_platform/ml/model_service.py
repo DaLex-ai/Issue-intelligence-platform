@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from typing import TYPE_CHECKING
 
 import mlflow
@@ -31,6 +32,13 @@ class ModelService:
 
         self.model = mlflow.pyfunc.load_model(model_uri)
         self.model_version = str(model_version.version)
+        logging.getLogger(__name__).info(
+            "model_loaded",
+            extra={
+                "model_alias": settings.mlflow_model_alias,
+                "model_version": self.model_version,
+            },
+        )
 
     def predict(
         self,

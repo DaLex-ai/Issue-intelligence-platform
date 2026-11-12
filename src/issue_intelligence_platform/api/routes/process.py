@@ -4,8 +4,10 @@ import asyncio
 from math import ceil
 from uuid import UUID, uuid4
 
+from asyncpg.exceptions import PostgresError
 from fastapi import APIRouter, HTTPException, Request, status
 from fastapi.responses import JSONResponse
+from sqlalchemy.exc import SQLAlchemyError
 
 from issue_intelligence_platform.core.config import settings
 from issue_intelligence_platform.db.database import session_factory
@@ -53,17 +55,34 @@ async def create_task(payload: TaskCreate, request: Request):
     except asyncio.QueueEmpty:
         return overloaded_response()
     task_id = uuid4()
+    request.state.task_id = str(task_id)
     try:
         try:
-            await submit(
-                store,
-                request.app.state.publisher,
-                task_id,
-                payload.summary,
-                payload.description,
+            await asyncio.wait_for(
+                submit(
+                    store,
+                    request.app.state.publisher,
+                    task_id,
+                    payload.summary,
+                    payload.description,
+                ),
+                timeout=settings.api_operation_timeout_seconds,
             )
         except (QueueFull, PublishUncertain):
             return overloaded_response()
+        except (SQLAlchemyError, PostgresError, OSError, TimeoutError):
+            # A SQL commit may have succeeded even if its response was lost.
+            # Expose the stable ID so clients can check before submitting anew.
+            url = f"/api/v1/tasks/{task_id}"
+            return JSONResponse(
+                status_code=503,
+                headers={"Retry-After": str(retry_after_seconds()), "Location": url},
+                content={
+                    "detail": "Admission outcome unknown; check task status before retrying",
+                    "task_id": str(task_id),
+                    "status_url": url,
+                },
+            )
     finally:
         slots.put_nowait(None)
     return JSONResponse(
@@ -79,7 +98,16 @@ async def create_task(payload: TaskCreate, request: Request):
 
 @router.get("/api/v1/tasks/{task_id}")
 async def get_task(task_id: UUID):
-    record = await store.get(task_id)
+    try:
+        record = await asyncio.wait_for(
+            store.get(task_id), timeout=settings.api_operation_timeout_seconds
+        )
+    except (SQLAlchemyError, PostgresError, OSError, TimeoutError) as exc:
+        raise HTTPException(
+            status_code=503,
+            detail="Task storage unavailable; retry status lookup",
+            headers={"Retry-After": str(retry_after_seconds())},
+        ) from exc
     if record is None:
         raise HTTPException(status_code=404, detail="Task not found")
     return record

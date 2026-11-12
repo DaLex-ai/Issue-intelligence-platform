@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import hashlib
+import os
+
 import matplotlib.pyplot as plt
 import mlflow
 import mlflow.data
@@ -142,15 +145,18 @@ def run_model(
     *,
     run_name: str,
     model,
-    dataset,
+    datasets,
+    split_manifest,
     x_train,
     x_test,
     y_train,
     y_test,
     params: dict,
 ) -> None:
-    with mlflow.start_run(run_name=run_name):
-        mlflow.log_input(dataset, context="training")
+    with mlflow.start_run(run_name=run_name) as run:
+        for dataset, context in zip(datasets, ("training", "evaluation"), strict=True):
+            mlflow.log_input(dataset, context=context)
+        mlflow.log_dict(split_manifest, "data/split-manifest.json")
         mlflow.log_params(params)
 
         model.fit(x_train, y_train)
@@ -161,13 +167,13 @@ def run_model(
             y_test,
         )
 
-        print(f"\n{run_name}")
+        print(f"\n{run_name} Run ID: {run.info.run_id}")
         for name, value in metrics.items():
             print(f"  {name}: {value:.4f}")
 
 
 def main() -> None:
-    mlflow.set_tracking_uri(TRACKING_URI)
+    mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI", TRACKING_URI))
     mlflow.set_experiment(EXPERIMENT_NAME)
 
     raw_df = load_raw_dataset()
@@ -184,17 +190,36 @@ def main() -> None:
         stratify=y,
     )
 
-    dataset = mlflow.data.from_pandas(
-        df[["text", "Priority"]],
-        source=DATASET_URL,
-        name="gitbugs-cassandra-priority",
-        targets="Priority",
+    source = os.getenv("IIP_DATASET_PATH", DATASET_URL)
+    prepared_digest = hashlib.sha256(
+        df[["text", "Priority"]].to_json(orient="records", force_ascii=False).encode()
+    ).hexdigest()
+    datasets = tuple(
+        mlflow.data.from_pandas(
+            df.loc[part.index, ["text", "Priority"]],
+            source=source,
+            name=f"issue-priority-{name}",
+            targets="Priority",
+        )
+        for name, part in (("train", x_train), ("test", x_test))
     )
+    split_manifest = {
+        "source": source,
+        "prepared_sha256": prepared_digest,
+        "row_count": len(df),
+        "test_size": 0.2,
+        "random_state": RANDOM_STATE,
+        "stratify": "Priority",
+        "index_basis": "zero-based ordered rows after prepare_dataset",
+        "train_indices": [int(index) for index in x_train.index],
+        "test_indices": [int(index) for index in x_test.index],
+    }
 
     run_model(
         run_name="baseline-dummy",
         model=DummyClassifier(strategy="most_frequent"),
-        dataset=dataset,
+        datasets=datasets,
+        split_manifest=split_manifest,
         x_train=x_train,
         x_test=x_test,
         y_train=y_train,
@@ -220,7 +245,8 @@ def main() -> None:
     run_model(
         run_name="tfidf-logistic-regression",
         model=logistic_model,
-        dataset=dataset,
+        datasets=datasets,
+        split_manifest=split_manifest,
         x_train=x_train,
         x_test=x_test,
         y_train=y_train,
@@ -248,7 +274,8 @@ def main() -> None:
     run_model(
         run_name="tfidf-linear-svc",
         model=svc_model,
-        dataset=dataset,
+        datasets=datasets,
+        split_manifest=split_manifest,
         x_train=x_train,
         x_test=x_test,
         y_train=y_train,

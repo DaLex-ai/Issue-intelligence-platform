@@ -1,0 +1,27 @@
+# Isolated defense/QA ports. Use -p iip-observe-qa with both Compose files.
+services:
+  app:
+    ports: !override ["127.0.0.1:18080:8000"]
+  worker:
+    image: iip-observe-qa-app
+    command: ["python", "/demo/worker.py"]
+    volumes: ["./observability/demo:/demo:ro"]
+  batch:
+    image: iip-observe-qa-app
+    volumes: ["./observability/demo:/demo:ro"]
+  db:
+    ports: !reset []
+  rabbitmq:
+    ports: !override ["127.0.0.1:15673:15672"]
+  minio:
+    ports: !reset []
+  mlflow:
+    ports: !reset []
+  grafana:
+    ports: !override ["127.0.0.1:13000:3000"]
+  loki:
+    ports: ["127.0.0.1:13100:3100"]
+  tempo:
+    ports: ["127.0.0.1:13200:3200"]
+  prometheus:
+    ports: ["127.0.0.1:19090:9090"]

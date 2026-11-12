@@ -1,0 +1,11 @@
+{
+  "overload": {
+    "accepted": 20,
+    "refused_503": 4,
+    "retry_after_seconds": [
+      5
+    ],
+    "completed": 20
+  },
+  "measured_at_utc": "2026-10-30T17:46:40.240920+00:00"
+}

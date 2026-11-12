@@ -74,3 +74,20 @@ async def test_health_returns_503_when_database_is_unavailable(
     assert data["components"]["postgresql"]["status"] == "unavailable"
     assert data["components"]["postgresql"]["version"] is None
     assert isinstance(data["components"]["postgresql"]["response_time_ms"], float)
+
+
+async def test_readiness_requires_broker_and_database(client, monkeypatch):
+    from types import SimpleNamespace
+
+    from issue_intelligence_platform.main import app
+
+    monkeypatch.setattr(health_module, "engine", FakeHealthyEngine())
+    monkeypatch.setattr(
+        app.state, "publisher", SimpleNamespace(ready=lambda: True), raising=False
+    )
+    assert (await client.get("/readyz")).status_code == 200
+    monkeypatch.setattr(app.state, "publisher", SimpleNamespace(ready=lambda: False))
+    assert (await client.get("/readyz")).status_code == 503
+    monkeypatch.setattr(app.state, "publisher", SimpleNamespace(ready=lambda: True))
+    monkeypatch.setattr(health_module, "engine", FakeFailingEngine())
+    assert (await client.get("/readyz")).status_code == 503

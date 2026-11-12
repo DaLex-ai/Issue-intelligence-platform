@@ -1,0 +1,145 @@
+{
+  "apiVersion": 1,
+  "groups": [
+    {
+      "orgId": 1,
+      "name": "iip",
+      "folder": "Issue Intelligence",
+      "interval": "10s",
+      "rules": [
+        {
+          "uid": "iip-queue-pressure",
+          "title": "Work queue above 90 percent",
+          "condition": "B",
+          "for": "1m",
+          "noDataState": "OK",
+          "execErrState": "Error",
+          "isPaused": false,
+          "annotations": {
+            "summary": "Work queue above 90 percent"
+          },
+          "data": [
+            {
+              "refId": "A",
+              "relativeTimeRange": {
+                "from": 120,
+                "to": 0
+              },
+              "datasourceUid": "prometheus",
+              "model": {
+                "refId": "A",
+                "expr": "rabbitmq_detailed_queue_messages_ready{queue=\"issue.inference.tasks\"} / scalar(max(iip_queue_limit))",
+                "instant": true,
+                "range": false,
+                "intervalMs": 2000,
+                "maxDataPoints": 100
+              }
+            },
+            {
+              "refId": "B",
+              "relativeTimeRange": {
+                "from": 0,
+                "to": 0
+              },
+              "datasourceUid": "__expr__",
+              "model": {
+                "refId": "B",
+                "type": "threshold",
+                "expression": "A",
+                "conditions": [
+                  {
+                    "evaluator": {
+                      "params": [
+                        0.9
+                      ],
+                      "type": "gt"
+                    },
+                    "operator": {
+                      "type": "and"
+                    },
+                    "query": {
+                      "params": [
+                        "B"
+                      ]
+                    },
+                    "reducer": {
+                      "params": [],
+                      "type": "last"
+                    },
+                    "type": "query"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "uid": "iip-dlq",
+          "title": "Dead letter queue has messages",
+          "condition": "B",
+          "for": "10s",
+          "noDataState": "OK",
+          "execErrState": "Error",
+          "isPaused": false,
+          "annotations": {
+            "summary": "Dead letter queue has messages"
+          },
+          "data": [
+            {
+              "refId": "A",
+              "relativeTimeRange": {
+                "from": 120,
+                "to": 0
+              },
+              "datasourceUid": "prometheus",
+              "model": {
+                "refId": "A",
+                "expr": "rabbitmq_detailed_queue_messages_ready{queue=\"issue.inference.dlq\"}",
+                "instant": true,
+                "range": false,
+                "intervalMs": 2000,
+                "maxDataPoints": 100
+              }
+            },
+            {
+              "refId": "B",
+              "relativeTimeRange": {
+                "from": 0,
+                "to": 0
+              },
+              "datasourceUid": "__expr__",
+              "model": {
+                "refId": "B",
+                "type": "threshold",
+                "expression": "A",
+                "conditions": [
+                  {
+                    "evaluator": {
+                      "params": [
+                        0
+                      ],
+                      "type": "gt"
+                    },
+                    "operator": {
+                      "type": "and"
+                    },
+                    "query": {
+                      "params": [
+                        "B"
+                      ]
+                    },
+                    "reducer": {
+                      "params": [],
+                      "type": "last"
+                    },
+                    "type": "query"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

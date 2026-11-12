@@ -7,6 +7,7 @@ repos:
       - id: check-added-large-files
         args: ["--maxkb=1000"]
       - id: check-yaml
+        exclude: ^observability/qa\.compose\.yaml$
       - id: check-toml
       - id: check-merge-conflict
 

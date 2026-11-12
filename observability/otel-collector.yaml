@@ -1,0 +1,47 @@
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: 0.0.0.0:4318
+processors:
+  memory_limiter:
+    check_interval: 1s
+    limit_mib: 120
+    spike_limit_mib: 24
+  batch:
+    timeout: 1s
+    send_batch_size: 256
+  transform/metrics:
+    metric_statements:
+      - context: datapoint
+        statements:
+          - set(attributes["service"], resource.attributes["service.name"])
+          - set(attributes["worker"], resource.attributes["service.instance.id"]) where resource.attributes["service.name"] == "worker"
+      - context: resource
+        statements:
+          - set(attributes["service.instance.id"], "batch") where attributes["service.name"] == "batch"
+exporters:
+  otlp/tempo:
+    endpoint: tempo:4317
+    tls:
+      insecure: true
+    timeout: 2s
+    sending_queue:
+      queue_size: 128
+    retry_on_failure:
+      initial_interval: 1s
+      max_interval: 3s
+      max_elapsed_time: 10s
+  prometheus:
+    endpoint: 0.0.0.0:8889
+    metric_expiration: 45s
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [memory_limiter, batch]
+      exporters: [otlp/tempo]
+    metrics:
+      receivers: [otlp]
+      processors: [memory_limiter, transform/metrics, batch]
+      exporters: [prometheus]
